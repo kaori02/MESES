@@ -19,4 +19,13 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/', 'HomeController@index');
+Route::get('/home', 'HomeController@home');
+Route::get('/tutor', 'HomeController@tutor');
+
+Route::get('/tutor/soals', 'SoalController@tutor');
+Route::get('/tutor/kelas', 'KelasController@tutor');
+
+Route::resource('soals', 'SoalController');
+Route::resource('videos', 'VideoController');
+Route::resource('kelases', 'KelasController');
