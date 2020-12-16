@@ -83,9 +83,9 @@
                         Medical Courses</h1>
 
                     <p class="mbr-text pb-3 mbr-fonts-style display-5">Your One Stop Course</p>
-                    <div class="mbr-section-btn"><a class="btn btn-md btn-primary display-4" href="register.html">Daftar
+                    <div class="mbr-section-btn"><a class="btn btn-md btn-primary display-4" href="/register">Daftar
                             Sekarang</a>
-                        <a class="btn btn-md btn-white display-4" href="login.html">Sudah punya akun? Masuk</a></div>
+                        <a class="btn btn-md btn-white display-4" href="/login">Sudah punya akun? Masuk</a></div>
                 </div>
             </div>
         </div>
@@ -124,8 +124,7 @@
                         </div>
                         <div class="card-box">
                             <h4 class="card-title mbr-fonts-style display-7">Materi Komprehensif</h4>
-                            <p class="mbr-text mbr-fonts-style display-7">Lorem ipsum dolor sit amet,
-                                coasdasdasdasdsadsadnsectetur adipisicing elit. Doloribus, odit?</p>
+                            <p class="mbr-text mbr-fonts-style display-7">Materi yang singkat, padat, dan jelas untuk memaksimalkan waktu belajar</p>
                         </div>
                         <div class="mbr-section-btn text-center">
                             <a href="https://mobiri.se" class="btn btn-primary display-4">
@@ -143,8 +142,7 @@
                         <div class="card-box">
                             <h4 class="card-title mbr-fonts-style display-7">Tutorial&nbsp;</h4>
                             <p class="mbr-text mbr-fonts-style display-7">
-                                Lorem ipsum dolor sit amet, coasdasdasdasdsadsadnsectetur adipisicing elit. Doloribus,
-                                odit?
+                                Dengan Video tutorial dan penjelasan materi yang komperhensif, mahasiswa dapat lebih mudah memahami materi
                             </p>
                         </div>
                         <div class="mbr-section-btn text-center">
@@ -163,8 +161,7 @@
                         <div class="card-box">
                             <h4 class="card-title mbr-fonts-style display-7">Diskusi Interaktif</h4>
                             <p class="mbr-text mbr-fonts-style display-7">
-                                Lorem ipsum dolor sit amet, coasdasdasdasdsadsadnsectetur adipisicing elit. Doloribus,
-                                odit?
+                                Diskusi interaktif untuk memperdalam pemahaman mahasiswa terhadap materi
                             </p>
                         </div>
                         <div class="mbr-section-btn text-center">
@@ -201,15 +198,15 @@
                         <div class="card-box">
                             <div class="top-line pb-1">
                                 <h4 class="card-title mbr-fonts-style display-5">
-                                    Blok 1
+                                    Saraf
                                 </h4>
                                 <p class="mbr-text card-title cost mbr-fonts-style m-0 display-5">...</p>
                             </div>
                             <div class="bottom-line">
-                                <p class="mbr-text mbr-fonts-style display-7">
+                                {{-- <p class="mbr-text mbr-fonts-style display-7">
                                     Lorem ipsum dolor sit amet, coasdasdasdasdsadsadnsectetur adipisicing elit.
                                     Doloribus, odit?
-                                </p>
+                                </p> --}}
                             </div>
                         </div>
                     </div>
@@ -220,16 +217,16 @@
                         <div class="card-box">
                             <div class="top-line pb-3">
                                 <h4 class="card-title mbr-fonts-style display-5">
-                                    Blok 2
+                                    Psikiatri
                                 </h4>
                                 <p class="mbr-text card-title cost mbr-fonts-style m-0 display-5">
                                     ...
                                 </p>
                             </div>
                             <div class="bottom-line">
-                                <p class="mbr-text mbr-fonts-style display-7">
+                                {{-- <p class="mbr-text mbr-fonts-style display-7">
                                     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus, odit?
-                                </p>
+                                </p> --}}
                             </div>
                         </div>
                     </div>
@@ -240,16 +237,16 @@
                         <div class="card-box">
                             <div class="top-line pb-3">
                                 <h4 class="card-title mbr-fonts-style display-5">
-                                    Blok 3
+                                    THT
                                 </h4>
                                 <p class="mbr-text card-title cost mbr-fonts-style m-0 display-5">
                                     ...
                                 </p>
                             </div>
                             <div class="bottom-line">
-                                <p class="mbr-text mbr-fonts-style display-7">
+                                {{-- <p class="mbr-text mbr-fonts-style display-7">
                                     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus, odit?
-                                </p>
+                                </p> --}}
                             </div>
                         </div>
                     </div>
@@ -260,16 +257,16 @@
                         <div class="card-box">
                             <div class="top-line pb-3">
                                 <h4 class="card-title mbr-fonts-style display-5">
-                                    Blok 4
+                                    Mata
                                 </h4>
                                 <p class="mbr-text card-title cost mbr-fonts-style m-0 display-5">
                                     ...
                                 </p>
                             </div>
                             <div class="bottom-line">
-                                <p class="mbr-text mbr-fonts-style display-7">
+                                {{-- <p class="mbr-text mbr-fonts-style display-7">
                                     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus, odit?
-                                </p>
+                                </p> --}}
                             </div>
                         </div>
                     </div>
@@ -280,16 +277,16 @@
                         <div class="card-box">
                             <div class="top-line pb-3">
                                 <h4 class="card-title mbr-fonts-style display-5">
-                                    Blok 5
+                                    Respirasi
                                 </h4>
                                 <p class="mbr-text card-title cost mbr-fonts-style m-0 display-5">
                                     ...
                                 </p>
                             </div>
                             <div class="bottom-line">
-                                <p class="mbr-text mbr-fonts-style display-7">
+                                {{-- <p class="mbr-text mbr-fonts-style display-7">
                                     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus, odit?
-                                </p>
+                                </p> --}}
                             </div>
                         </div>
                     </div>
@@ -300,16 +297,16 @@
                         <div class="card-box">
                             <div class="top-line pb-3">
                                 <h4 class="card-title mbr-fonts-style display-5">
-                                    Blok 6
+                                    Kardiologi
                                 </h4>
                                 <p class="mbr-text card-title cost mbr-fonts-style m-0 display-5">
                                     ...
                                 </p>
                             </div>
                             <div class="bottom-line">
-                                <p class="mbr-text mbr-fonts-style display-7">
+                                {{-- <p class="mbr-text mbr-fonts-style display-7">
                                     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus, odit?
-                                </p>
+                                </p> --}}
                             </div>
                         </div>
                     </div>
@@ -320,16 +317,16 @@
                         <div class="card-box">
                             <div class="top-line pb-3">
                                 <h4 class="card-title mbr-fonts-style display-5">
-                                    Blok 7
+                                    Gastrohepato
                                 </h4>
                                 <p class="mbr-text card-title cost mbr-fonts-style m-0 display-5">
                                     ...
                                 </p>
                             </div>
                             <div class="bottom-line">
-                                <p class="mbr-text mbr-fonts-style display-7">
+                                {{-- <p class="mbr-text mbr-fonts-style display-7">
                                     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus, odit?
-                                </p>
+                                </p> --}}
                             </div>
                         </div>
                     </div>
@@ -340,16 +337,16 @@
                         <div class="card-box">
                             <div class="top-line pb-3">
                                 <h4 class="card-title mbr-fonts-style display-5">
-                                    Blok 8
+                                    Ginjal
                                 </h4>
                                 <p class="mbr-text card-title cost mbr-fonts-style m-0 display-5">
                                     ...
                                 </p>
                             </div>
                             <div class="bottom-line">
-                                <p class="mbr-text mbr-fonts-style display-7">
+                                {{-- <p class="mbr-text mbr-fonts-style display-7">
                                     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus, odit?
-                                </p>
+                                </p> --}}
                             </div>
                         </div>
                     </div>
@@ -360,16 +357,16 @@
                         <div class="card-box">
                             <div class="top-line pb-3">
                                 <h4 class="card-title mbr-fonts-style display-5">
-                                    Blok 9
+                                    Reproduksi
                                 </h4>
                                 <p class="mbr-text card-title cost mbr-fonts-style m-0 display-5">
                                     ...
                                 </p>
                             </div>
                             <div class="bottom-line">
-                                <p class="mbr-text mbr-fonts-style display-7">
+                                {{-- <p class="mbr-text mbr-fonts-style display-7">
                                     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus, odit?
-                                </p>
+                                </p> --}}
                             </div>
                         </div>
                     </div>
@@ -380,16 +377,16 @@
                         <div class="card-box">
                             <div class="top-line pb-3">
                                 <h4 class="card-title mbr-fonts-style display-5">
-                                    Blok 10
+                                    Endokrin
                                 </h4>
                                 <p class="mbr-text card-title cost mbr-fonts-style m-0 display-5">
                                     ...
                                 </p>
                             </div>
                             <div class="bottom-line">
-                                <p class="mbr-text mbr-fonts-style display-7">
+                                {{-- <p class="mbr-text mbr-fonts-style display-7">
                                     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus, odit?
-                                </p>
+                                </p> --}}
                             </div>
                         </div>
                     </div>
@@ -400,16 +397,16 @@
                         <div class="card-box">
                             <div class="top-line pb-3">
                                 <h4 class="card-title mbr-fonts-style display-5">
-                                    Blok 11
+                                    Hematoimuno
                                 </h4>
                                 <p class="mbr-text card-title cost mbr-fonts-style m-0 display-5">
                                     ...
                                 </p>
                             </div>
                             <div class="bottom-line">
-                                <p class="mbr-text mbr-fonts-style display-7">
+                                {{-- <p class="mbr-text mbr-fonts-style display-7">
                                     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus, odit?
-                                </p>
+                                </p> --}}
                             </div>
                         </div>
                     </div>
@@ -420,16 +417,16 @@
                         <div class="card-box">
                             <div class="top-line pb-3">
                                 <h4 class="card-title mbr-fonts-style display-5">
-                                    Blok 12
+                                    Muskuloskeletal
                                 </h4>
                                 <p class="mbr-text card-title cost mbr-fonts-style m-0 display-5">
                                     ...
                                 </p>
                             </div>
                             <div class="bottom-line">
-                                <p class="mbr-text mbr-fonts-style display-7">
+                                {{-- <p class="mbr-text mbr-fonts-style display-7">
                                     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus, odit?
-                                </p>
+                                </p> --}}
                             </div>
                         </div>
                     </div>
@@ -514,7 +511,7 @@
 
         <div class="text-center container">
             <h3 class="mb-4 mbr-fonts-style display-2">
-                <strong>What Our Fantastic Users Say</strong>
+                <strong>Testimoni</strong>
             </h3>
 
             <div class="carousel slide" role="listbox" data-pause="true" data-keyboard="false" data-ride="carousel"
@@ -589,7 +586,7 @@
                     <div class="plan">
                         <div class="plan-header">
                             <h6 class="plan-title mbr-fonts-style mb-3 display-5">
-                                <strong>Monthly</strong>
+                                <strong>Bulanan</strong>
                             </h6>
                             <div class="plan-price">
                                 <p class="price mbr-fonts-style m-0 display-1"><strong>$19</strong></p>
@@ -619,7 +616,7 @@
                     <div class="plan">
                         <div class="plan-header">
                             <h6 class="plan-title mbr-fonts-style mb-3 display-5">
-                                <strong>Yearly</strong>
+                                <strong>Tahunan</strong>
                             </h6>
                             <div class="plan-price">
                                 <p class="price mbr-fonts-style m-0 display-1"><strong>$19</strong></p>
@@ -649,7 +646,7 @@
                     <div class="plan">
                         <div class="plan-header">
                             <h6 class="plan-title mbr-fonts-style mb-3 display-5">
-                                <strong>Lifetime</strong>
+                                <strong>Sarjana</strong>
                             </h6>
                             <div class="plan-price">
                                 <p class="price mbr-fonts-style m-0 display-1"><strong>$399</strong></p>

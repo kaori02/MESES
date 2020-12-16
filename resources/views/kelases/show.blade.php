@@ -139,7 +139,7 @@
             <div class="media-container-row">
                 <div class="mbr-text col-12 mbr-fonts-style display-7 col-md-12">
                     <p>&nbsp;&nbsp;&nbsp;&nbsp;
-                        {{$kelas->body}}
+                        {!!$kelas->body!!}
                     </p>
                 </div>
             </div>
@@ -165,7 +165,7 @@
                         <h3 class="mbr-section-title mbr-fonts-style mb-3 display-5">
                             <strong>{{$kelas->imagesdesc}}</strong></h3>
                         <p class="mbr-text mbr-fonts-style display-7">
-                            Nanti diisi kalo pake</p>
+                            -</p>
                     </div>
                 </div>
             </div>
@@ -195,9 +195,9 @@
                         Perlu Diingat !!!</h4>
                     <div class="mbr-text mbr-fonts-style display-7">
                         <ul>
-                            <li>{{$kelas->kesimpulan1}}</li>
+                            <li>{!!$kelas->kesimpulan1!!}</li>
                             <br>
-                            <li>{{$kelas->kesimpulan2}}</li>
+                            <li>{!!$kelas->kesimpulan2!!}</li>
                         </ul>
                     </div>
                 </div>

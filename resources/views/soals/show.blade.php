@@ -60,6 +60,7 @@
 
         </div>
         @foreach ($soals as $soal)
+        {{-- @for ($i = 0; $i < 5; $i++) --}}
         <div class="card">
             <div class="card-wrapper">
                 <div class="row align-items-center">
@@ -72,18 +73,18 @@
                         <div class="card-box">
                             <div class="row">
                                 <div class="col-12">
-                                    <div class="top-line">
-
+                                    <div class="top-line"
+                                    style="display: none">
                                         <p class="cost mbr-fonts-style display-5">...</p>
                                     </div>
                                 </div>
                                 <div class="col-12">
                                     <div class="bottom-line">
-                                        <p class="mbr-text mbr-fonts-style m-0 display-7">Themes in the Mobirise website builder offer multiple blocks: intros, sliders, galleries, forms, articles
-                                            <br>A
-                                            <br>B
-                                            <br>C
-                                            <br>D
+                                        <p class="mbr-text mbr-fonts-style m-0 display-7">{{$soal->body_soal}}
+                                            <br>{{$soal->a}}
+                                            <br>{{$soal->b}}
+                                            <br>{{$soal->c}}
+                                            <br>{{$soal->d}}
                                         </p>
                                     </div>
                                 </div>
@@ -93,6 +94,7 @@
                 </div>
             </div>
         </div>
+        {{-- @endfor --}}
         @endforeach
         {{$soals->links()}}
     </div>

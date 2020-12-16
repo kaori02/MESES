@@ -105,7 +105,15 @@ class SoalController extends Controller
     public function show($id)
     {
         $kategoris = KategoriSoal::find($id);
-        $soals = Soal::orderBy('id_soal')->where('kategori_id', ' = ' , $id)->paginate(10);
+        $soals = Soal::
+        where('kategori_id', $id)->
+        paginate(10);
+
+        // $soals = Soal::join('kategori_soal', 'soals.kategori_id', '=', 'kategori_soal.id_kategori')
+        // ->select('*')
+        // ->paginate(10);
+
+        // return view('ambulans/admin', compact('ambulans'));
         return view('soals/show', compact('kategoris','soals'));
     }
 

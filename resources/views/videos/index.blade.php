@@ -84,7 +84,7 @@
                         <div class="row align-items-center">
                             <div class="col-12 col-md-2">
                                 <div class="image-wrapper">
-                                    <img src="assets/images/product1.jpg" alt="Mobirise" title="">
+                                    <img src="assets/images/product2.jpg" alt="Mobirise" title="">
                                 </div>
                             </div>
                             <div class="col-12 col-md">
