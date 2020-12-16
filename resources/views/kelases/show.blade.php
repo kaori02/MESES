@@ -301,6 +301,10 @@
                 </div>
             </div>
         </div>
+        <br><br>
+        <div class="container">
+            <div id="disqus_thread"></div>
+        </div>
     </section>
 
     <section class="footer3 cid-sfXBI85u46 mbr-reveal" once="footers" id="footer3-1s">
