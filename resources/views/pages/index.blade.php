@@ -63,8 +63,19 @@
                                 href="/soals">Soal</a>
                         </li>
                     </ul>
+                    @if(!Auth::guest())
+                    <div class="navbar-buttons mbr-section-btn">
+                        <a class="btn btn-primary display-4" href="{{ route('logout') }}"
+                            onclick="event.preventDefault();
+                                          document.getElementById('logout-form').submit();">
+                             {{ __('Keluar') }}
+                         </a>
 
-
+                         <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                             @csrf
+                         </form>    
+                    </div>
+                    @endif
                 </div>
             </div>
         </nav>
@@ -81,11 +92,12 @@
                 <div class="mbr-white col-md-10">
                     <h1 class="mbr-section-title mbr-bold pb-3 mbr-fonts-style display-1">
                         Medical Courses</h1>
-
                     <p class="mbr-text pb-3 mbr-fonts-style display-5">Your One Stop Course</p>
+                    @if(Auth::guest())
                     <div class="mbr-section-btn"><a class="btn btn-md btn-primary display-4" href="/register">Daftar
                             Sekarang</a>
                         <a class="btn btn-md btn-white display-4" href="/login">Sudah punya akun? Masuk</a></div>
+                    @endif
                 </div>
             </div>
         </div>
@@ -103,7 +115,7 @@
                 <div class="col-md-12 col-lg-10">
                     <hr class="line">
                     <p class="mbr-text align-center mbr-fonts-style my-4 display-5">"Gunakan waktu sebaik
-                        mungkin,<br>jangan lewatkan kesempatan yang ada."<br><br>- William Shakespeare</p>
+                        mungkin,<br>jangan lewatkan kesempatan yang ada."<br><br>- William Shakespeare -</p>
                     <hr class="line">
                 </div>
             </div>
@@ -127,7 +139,7 @@
                             <p class="mbr-text mbr-fonts-style display-7">Materi yang singkat, padat, dan jelas untuk memaksimalkan waktu belajar</p>
                         </div>
                         <div class="mbr-section-btn text-center">
-                            <a href="https://mobiri.se" class="btn btn-primary display-4">
+                            <a href="/kelases" class="btn btn-primary display-4">
                                 Learn More
                             </a>
                         </div>
@@ -146,7 +158,7 @@
                             </p>
                         </div>
                         <div class="mbr-section-btn text-center">
-                            <a href="https://mobiri.se" class="btn btn-primary display-4">
+                            <a href="/videos" class="btn btn-primary display-4">
                                 Learn More
                             </a>
                         </div>
@@ -165,7 +177,7 @@
                             </p>
                         </div>
                         <div class="mbr-section-btn text-center">
-                            <a href="https://mobiri.se" class="btn btn-primary display-4">
+                            <a href="#" class="btn btn-primary display-4">
                                 Learn More
                             </a>
                         </div>

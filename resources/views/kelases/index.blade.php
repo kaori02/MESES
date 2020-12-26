@@ -7,11 +7,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="generator" content="Mobirise v5.2.0, mobirise.com">
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
-    <link rel="shortcut icon" href="assets/images/logo.png" type="image/x-icon">
+    <link rel="shortcut icon" href="{{asset('assets/images/logo.png')}}" type="image/x-icon">
     <meta name="description" content="">
 
 
-    <title>kelas</title>
+    <title>Daftar Kelas</title>
     <link rel="stylesheet" href="{{asset('assets/tether/tether.min.css')}}">
     <link rel="stylesheet" href="{{asset('assets/bootstrap/css/bootstrap.min.css')}}">
     <link rel="stylesheet" href="{{asset('assets/bootstrap/css/bootstrap-grid.min.css')}}">
@@ -60,6 +60,19 @@
                                 href="/soals">Soal</a>
                         </li>
                     </ul>
+                    @if(!Auth::guest())
+                    <div class="navbar-buttons mbr-section-btn">
+                        <a class="btn btn-primary display-4" href="{{ route('logout') }}"
+                            onclick="event.preventDefault();
+                                          document.getElementById('logout-form').submit();">
+                             {{ __('Keluar') }}
+                         </a>
+
+                         <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                             @csrf
+                         </form>    
+                    </div>
+                    @endif
 
 
                 </div>
