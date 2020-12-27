@@ -293,7 +293,7 @@
 
 
 
-        <div class="container">
+        {{-- <div class="container">
             <div class="row justify-content-center">
                 <div class="title col-12 col-lg-8">
                     <h2 class="mbr-section-title align-center pb-3 mbr-fonts-style display-2">
@@ -333,7 +333,7 @@
                     <!---Formbuilder Form--->
                 </div>
             </div>
-        </div>
+        </div> --}}
         <br><br>
         <div class="container">
             <div id="disqus_thread"></div>
