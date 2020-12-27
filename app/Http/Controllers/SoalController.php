@@ -36,6 +36,11 @@ class SoalController extends Controller
     public function create()
     {
         $kategoris = KategoriSoal::pluck('nama_kategori','id_kategori');
+        if (!Auth::user()->isKamiSama())
+        {
+            return redirect('/soals')->with('Error','Halaman ini tidak dapat diakses');
+        }
+
         return view('/soals/create')->with('kategoris', $kategoris);
     }
 
@@ -90,10 +95,11 @@ class SoalController extends Controller
         $soal->d = $request->input('d');
         $soal->jawaban = $request->input('jawaban');
         $soal->kategori_id = $request->input('kategori_id');
+        $kate = $soal->kategori_id;
         $soal->cover_image = $fileNameToStore;
         $soal->save();
 
-        return redirect('/soals/create')->with('Success',"Soal Ditambah");//
+        return redirect('/soals/'.$kate)->with('Success',"Soal Baru Berhasil Ditambah");
     }
 
     /**
@@ -105,15 +111,8 @@ class SoalController extends Controller
     public function show($id)
     {
         $kategoris = KategoriSoal::find($id);
-        $soals = Soal::
-        where('kategori_id', $id)->
-        paginate(10);
+        $soals = Soal::where('kategori_id', $id)->paginate(10);
 
-        // $soals = Soal::join('kategori_soal', 'soals.kategori_id', '=', 'kategori_soal.id_kategori')
-        // ->select('*')
-        // ->paginate(10);
-
-        // return view('ambulans/admin', compact('ambulans'));
         return view('soals/show', compact('kategoris','soals'));
     }
 
@@ -125,14 +124,14 @@ class SoalController extends Controller
      */
     public function edit($id)
     {
-        $soal = Soal::find($id);
-
+        $kategoris = KategoriSoal::pluck('nama_kategori','id_kategori');
         //cek user
-        if (Auth::guest())
+        if (!Auth::user()->isKamiSama())
         {
-            return redirect('/soals')->with('error','Unauthorized Page');
+            return redirect('/soals')->with('Error','Halaman ini tidak dapat diakses');
         }
-        return view('/soals/edit')->with('soal',$soal);
+        $soal = Soal::find($id);
+        return view('/soals/edit', compact('soal','kategoris'));
     }
 
     /**
@@ -181,13 +180,13 @@ class SoalController extends Controller
         $soal->d = $request->input('d');
         $soal->jawaban = $request->input('jawaban');
         $soal->kategori_id = $request->input('kategori_id');
-
+        $kateg = $soal->kategori_id;
         if($request->hasFile('cover_image')){
             $soal->cover_image = $fileNameToStore;
         }
         $soal->save();
 
-        return redirect('/soals/tutor')->with('Success',"Soal Diperbarui");
+        return redirect('/soals/'.$kateg)->with('Success',"Soal ".$kateg." Berhasil Diperbarui");
     }
 
     /**
@@ -199,6 +198,12 @@ class SoalController extends Controller
     public function destroy($id)
     {
         $soal = Soal::find($id);
+        $kategori = $soal->kategori_id;
+        //cek user
+        if (!Auth::user()->isKamiSama())
+        {
+            return redirect('/soals/'.$kategori)->with('Error','Halaman ini tidak dapat diakses');
+        }
 
         if($soal->cover_image != 'noimage.jpg')
         {
@@ -208,14 +213,6 @@ class SoalController extends Controller
 
 
         $soal->delete();
-        return redirect('soals/tutor')->with('Success',"Soal Terhapus");
-    }
-
-    public function tutor()
-    {
-        $user_id = auth()->user()->id;
-        $user = User::find($user_id);
-        $artikels = $user->artikels;
-        return view('soals/tutor', compact('soals'));
+        return redirect('soals/'.$kategori)->with('Success',"Soal Terhapus");
     }
 }

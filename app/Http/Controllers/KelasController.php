@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Kelas;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
 
 class KelasController extends Controller
 {
@@ -32,6 +34,10 @@ class KelasController extends Controller
      */
     public function create()
     {
+        if (!Auth::user()->isKamiSama())
+        {
+            return redirect('/kelases')->with('Error','Halaman ini tidak dapat diakses');
+        }
         return view('kelases.create');
     }
 
@@ -100,7 +106,7 @@ class KelasController extends Controller
         // $artikel->user_id = auth()->user()->id;
         $kelas->save();
 
-        return redirect('kelases/create')->with('Success',"Kelas Ditambah");
+        return redirect('kelases')->with('Success',"Blok Materi Ditambah");
     }
 
     /**
@@ -121,14 +127,14 @@ class KelasController extends Controller
      * @param  \App\Kelas  $kelas
      * @return \Illuminate\Http\Response
      */
-    public function edit(Kelas $kelas)
+    public function edit($id)
     {
         $kelas = Kelas::find($id);
 
         //cek user
-        if (Auth::guest())
+        if (!Auth::user()->isKamiSama())
         {
-            return redirect('/kelases')->with('error','Page Tidak Boleh Diakses');
+            return redirect('/kelases')->with('Error','Halaman ini tidak dapat diakses');
         }
         return view('kelases/edit')->with('kelas',$kelas);
     }
@@ -140,7 +146,7 @@ class KelasController extends Controller
      * @param  \App\Kelas  $kelas
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Kelas $kelas)
+    public function update(Request $request, $id)
     {
         $this->validate($request,[
             'judul' => 'required',
@@ -196,7 +202,7 @@ class KelasController extends Controller
         }
         $kelas->save();
 
-        return redirect('/kelases/edit')->with('Success',"Kelas Diperbarui");
+        return redirect('kelases')->with('Success',"Blok Materi ".$kelas->judul." Berhasil Diperbarui");
     }
 
     /**
@@ -205,8 +211,21 @@ class KelasController extends Controller
      * @param  \App\Kelas  $kelas
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Kelas $kelas)
+    public function destroy($id)
     {
-        //
+        //cek user
+        if (!Auth::user()->isKamiSama())
+        {
+            return redirect('/kelases/'.$kategori)->with('Error','Halaman ini tidak dapat diakses');
+        }
+
+        $kelas = Kelas::find($id);
+        if($kelas->images != 'noimage.jpg')
+        {
+            //delete image
+            Storage::delete('public/kelas_images/'.$kelas->images);
+        }
+        $kelas->delete();
+        return redirect('kelases')->with('Success',"Blok Materi ".$kelas->judul." Berhasil Dihapus");
     }
 }

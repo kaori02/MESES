@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Video;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
 
 class VideoController extends Controller
 {
@@ -32,7 +34,11 @@ class VideoController extends Controller
      */
     public function create()
     {
-        //
+        if (!Auth::user()->isKamiSama())
+        {
+            return redirect('/videos')->with('Error','Halaman ini tidak dapat diakses');
+        }
+        return view('videos.create');
     }
 
     /**
@@ -43,7 +49,19 @@ class VideoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request,[
+            'title' => 'required',
+            'body' => 'required',
+            'link' => 'required'
+        ]);
+        //create video
+        $video = new Video;
+        $video->title = $request->input('title');
+        $video->body = $request->input('body');
+        $video->link = $request->input('link');
+        $video->save();
+
+        return redirect('videos')->with('Success',"Video Baru Berhasil Ditambah");
     }
 
     /**
@@ -64,9 +82,14 @@ class VideoController extends Controller
      * @param  \App\Video  $video
      * @return \Illuminate\Http\Response
      */
-    public function edit(Video $video)
+    public function edit($id)
     {
-        //
+        if (!Auth::user()->isKamiSama())
+        {
+            return redirect('/videos')->with('Error','Halaman ini tidak dapat diakses');
+        }
+        $video = Video::find($id);
+        return view('videos/edit')->with('video',$video);
     }
 
     /**
@@ -76,9 +99,23 @@ class VideoController extends Controller
      * @param  \App\Video  $video
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Video $video)
+    public function update(Request $request, $id)
     {
-        //
+        $this->validate($request,[
+            'title' => 'required',
+            'body' => 'required',
+            'link' => 'required'
+        ]);
+
+
+        //edit video
+        $video = Video::find($id);
+        $video->title = $request->input('title');
+        $video->body = $request->input('body');
+        $video->link = $request->input('link');
+        $video->save();
+
+        return redirect('videos')->with('Success',"Video ".$video->title." Berhasil Diperbarui");
     }
 
     /**
@@ -87,8 +124,16 @@ class VideoController extends Controller
      * @param  \App\Video  $video
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Video $video)
+    public function destroy($id)
     {
-        //
+        //cek user
+        if (!Auth::user()->isKamiSama())
+        {
+            return redirect('/videos/'.$kategori)->with('Error','Halaman ini tidak dapat diakses');
+        }
+        $video = Video::find($id);
+        $video->delete();
+        return redirect('videos')->with('Success',"Video ".$video->title." Berhasil Dihapus");
     }
+
 }

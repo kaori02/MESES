@@ -11,7 +11,20 @@
     <meta name="description" content="">
 
 
-    <title>Daftar VIdeo</title>
+    <title>Daftar Video</title>
+    @if(!Auth::guest() && Auth::user()->isKamiSama())
+    <link rel="stylesheet" href="{{asset('assets-t/tether/tether.min.css')}}">
+    <link rel="stylesheet" href="{{asset('assets-t/bootstrap/css/bootstrap.min.css')}}">
+    <link rel="stylesheet" href="{{asset('assets-t/bootstrap/css/bootstrap-grid.min.css')}}">
+    <link rel="stylesheet" href="{{asset('assets-t/bootstrap/css/bootstrap-reboot.min.css')}}">
+    <link rel="stylesheet" href="{{asset('assets-t/facebook-plugin/style.css')}}">
+    <link rel="stylesheet" href="{{asset('assets-t/dropdown/css/style.css')}}">
+    <link rel="stylesheet" href="{{asset('assets-t/animatecss/animate.css')}}">
+    <link rel="stylesheet" href="{{asset('assets-t/socicon/css/styles.css')}}">
+    <link rel="stylesheet" href="{{asset('assets-t/theme/css/style.css')}}">
+    <link rel="stylesheet" href="{{asset('assets-t/mobirise/css/mbr-additional.css')}}" type="text/css">
+    <link rel="preload" as="style" href="{{asset('assets-t/mobirise/css/mbr-additional.css')}}">
+    @else
     <link rel="stylesheet" href="{{asset('assets/tether/tether.min.css')}}">
     <link rel="stylesheet" href="{{asset('assets/bootstrap/css/bootstrap.min.css')}}">
     <link rel="stylesheet" href="{{asset('assets/bootstrap/css/bootstrap-grid.min.css')}}">
@@ -23,18 +36,18 @@
     <link rel="stylesheet" href="{{asset('assets/theme/css/style.css')}}">
     <link rel="stylesheet" href="{{asset('assets/mobirise/css/mbr-additional.css')}}" type="text/css">
     <link rel="preload" as="style" href="{{asset('assets/mobirise/css/mbr-additional.css')}}">
-
+    @endif
+    <script src="{{ asset('assets/web/assets/jquery/jquery.min.js') }}"></script>
 </head>
 
 <body>
-
+    @if(!Auth::guest() && Auth::user()->isKamiSama())
+    @include('pages.navbartutor')
+    @else
     <section class="menu menu1 cid-sfXvYXKxbA" once="menu" id="menu1-1f">
-
-
         <nav class="navbar navbar-dropdown navbar-fixed-top navbar-expand-lg">
             <div class="container-fluid">
                 <div class="navbar-brand">
-
                     <span class="navbar-caption-wrap"><a class="navbar-caption text-black text-primary display-7"
                             href="/">MESES</a></span>
                 </div>
@@ -79,15 +92,15 @@
             </div>
         </nav>
     </section>
+    @endif
 
     <section class="features10 cid-sfXvYYaoX0" id="features11-1g">
         <!---->
-
-
         <div class="container">
             <div class="title">
                 <h3 class="mbr-section-title mbr-fonts-style mb-4 display-2">
                     <strong>Daftar Video</strong></h3>
+                    @include('pages.msg')
 
             </div>
             @if(count($videos) > 0)
@@ -97,7 +110,22 @@
                         <div class="row align-items-center">
                             <div class="col-12 col-md-2">
                                 <div class="image-wrapper">
-                                    <img src="assets/images/product2.jpg" alt="Mobirise" title="">
+                                    <style>
+                                        iframe {
+                                            display: none;
+                                        }
+                                    </style>
+                                    {{-- <img src="assets/images/product2.jpg" alt="Mobirise" title=""> --}}
+                                    <script>
+                                        var sites = {!! json_encode($video->link(), JSON_HEX_TAG) !!};
+                                        var iframe_src = $(sites).attr('src');
+                                        var youtube_video_id = iframe_src.match(/youtube\.com.*(\?v=|\/embed\/)(.{11})/).pop();
+                                    
+                                        if (youtube_video_id.length == 11) {
+                                          var video_thumbnail2 = '<img src="//img.youtube.com/vi/' + youtube_video_id + '/0.jpg">';
+                                          document.write(video_thumbnail2);
+                                        }
+                                    </script>
                                 </div>
                             </div>
                             <div class="col-12 col-md">
@@ -108,8 +136,12 @@
                                                 <a href="/videos/{{$video->id_video}}" style="color:#232323">
                                                     <h4 class="card-title mbr-fonts-style display-5"><strong>{{$video->title}}</strong></h4>
                                                 </a>
-                                                <p class="cost mbr-fonts-style display-5">
-                                                    ...</p>
+                                                @if(!Auth::guest())
+                                                @if (Auth::user()->isKamiSama())
+                                                <a style="color:#232323" href="/videos/{{$video->id_video}}/edit" class="cost mbr-fonts-style display-5">
+                                                    ...</a>
+                                                @endif
+                                                @endif
                                             </div>
                                         </div>
                                         <div class="col-12">
@@ -215,7 +247,7 @@
         <p style="flex: 0 0 auto; margin:0; padding-right:1rem;"><a href="https://mobirise.site/c"
                 style="color:#aaa;">The</a> site was designed with Mobirise</p>
     </section>
-    <script src="{{ asset('assets/web/assets/jquery/jquery.min.js') }}"></script>
+
     <script src="{{ asset('assets/popper/popper.min.js') }}"></script>
     <script src="{{ asset('assets/tether/tether.min.js') }}"></script>
     <script src="{{ asset('assets/bootstrap/js/bootstrap.min.js') }}"></script>
@@ -228,6 +260,8 @@
     <script src="{{ asset('assets/dropdown/js/navbar-dropdown.js') }}"></script>
     <script src="{{ asset('assets/viewportchecker/jquery.viewportchecker.js') }}"></script>
     <script src="{{ asset('assets/theme/js/script.js') }}"></script>
+
+
 
     <div id="scrollToTop" class="scrollToTop mbr-arrow-up"><a style="text-align: center;"><i
                 class="mbr-arrow-up-icon mbr-arrow-up-icon-cm cm-icon cm-icon-smallarrow-up"></i></a></div>

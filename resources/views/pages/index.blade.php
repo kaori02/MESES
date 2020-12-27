@@ -98,6 +98,14 @@
                             Sekarang</a>
                         <a class="btn btn-md btn-white display-4" href="/login">Sudah punya akun? Masuk</a></div>
                     @endif
+                    @if(!Auth::guest())
+                    @if (Auth::user()->isKamiSama())
+                    <div class="mbr-section-btn"><a class="btn btn-md btn-secondary display-4" href="/tutor">Masuk bagian tutor
+                            sekarang</a>
+                        {{-- <a class="btn btn-md btn-white display-4" href="/login">Sudah punya akun? Masuk</a> --}}
+                    </div>
+                    @endif
+                    @endif
                 </div>
             </div>
         </div>

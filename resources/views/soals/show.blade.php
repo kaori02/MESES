@@ -11,6 +11,19 @@
 
 
   <title>Soal</title>
+  @if(!Auth::guest() && Auth::user()->isKamiSama())
+  <link rel="stylesheet" href="{{asset('assets-t/tether/tether.min.css')}}">
+  <link rel="stylesheet" href="{{asset('assets-t/bootstrap/css/bootstrap.min.css')}}">
+  <link rel="stylesheet" href="{{asset('assets-t/bootstrap/css/bootstrap-grid.min.css')}}">
+  <link rel="stylesheet" href="{{asset('assets-t/bootstrap/css/bootstrap-reboot.min.css')}}">
+  <link rel="stylesheet" href="{{asset('assets-t/facebook-plugin/style.css')}}">
+  <link rel="stylesheet" href="{{asset('assets-t/dropdown/css/style.css')}}">
+  <link rel="stylesheet" href="{{asset('assets-t/animatecss/animate.css')}}">
+  <link rel="stylesheet" href="{{asset('assets-t/socicon/css/styles.css')}}">
+  <link rel="stylesheet" href="{{asset('assets-t/theme/css/style.css')}}">
+  <link rel="stylesheet" href="{{asset('assets-t/mobirise/css/mbr-additional.css')}}" type="text/css">
+  <link rel="preload" as="style" href="{{asset('assets-t/mobirise/css/mbr-additional.css')}}">
+  @else
   <link rel="stylesheet" href="{{asset('assets/tether/tether.min.css')}}">
   <link rel="stylesheet" href="{{asset('assets/bootstrap/css/bootstrap.min.css')}}">
   <link rel="stylesheet" href="{{asset('assets/bootstrap/css/bootstrap-grid.min.css')}}">
@@ -20,11 +33,15 @@
   <link rel="stylesheet" href="{{asset('assets/animatecss/animate.css')}}">
   <link rel="stylesheet" href="{{asset('assets/socicon/css/styles.css')}}">
   <link rel="stylesheet" href="{{asset('assets/theme/css/style.css')}}">
-  <link rel="preload" as="style" href="{{asset('assets/mobirise/css/mbr-additional.css')}}">
   <link rel="stylesheet" href="{{asset('assets/mobirise/css/mbr-additional.css')}}" type="text/css">
+  <link rel="preload" as="style" href="{{asset('assets/mobirise/css/mbr-additional.css')}}">
+  @endif
 </head>
 <body>
 
+    @if(!Auth::guest() && Auth::user()->isKamiSama())
+    @include('pages.navbartutor')
+    @else
   <section class="menu menu1 cid-sfXxzEKelL" once="menu" id="menu1-1n">
     <nav class="navbar navbar-dropdown navbar-fixed-top navbar-expand-lg">
         <div class="container-fluid">
@@ -66,31 +83,33 @@
         </div>
     </nav>
 </section>
+@endif
 
 <section class="features10 cid-sfXxzF8sY5" id="features11-1o">
     <div class="container">
         <div class="title">
             <h3 class="mbr-section-title mbr-fonts-style mb-4 display-2"><strong>Soal {{$kategoris->nama_kategori}}</strong></h3>
+            @include('pages.msg')
 
         </div>
         @foreach ($soals as $soal)
-        {{-- @for ($i = 0; $i < 5; $i++) --}}
         <div class="card">
             <div class="card-wrapper">
                 <div class="row align-items-center">
                     <div class="col-12 col-md-2">
                         <div class="image-wrapper">
-                            <img src="{{asset('assets/images/product3.jpg')}}" alt="Mobirise" title="">
+                            <img src="/storage/soal_images/{{$soal->cover_image}}" alt="Mobirise" title="">
                         </div>
                     </div>
                     <div class="col-12 col-md">
                         <div class="card-box">
                             <div class="row">
                                 <div class="col-12">
-                                    <div class="top-line"
-                                    style="display: none">
-                                        <p class="cost mbr-fonts-style display-5">...</p>
+                                    @if(!Auth::guest() && Auth::user()->isKamiSama())
+                                    <div class="top-line">
+                                        <a href="/soals/{{$soal->id_soal}}/edit" class="cost mbr-fonts-style display-5">...</a>
                                     </div>
+                                    @endif
                                 </div>
                                 <div class="col-12">
                                     <div class="bottom-line">
@@ -108,7 +127,6 @@
                 </div>
             </div>
         </div>
-        {{-- @endfor --}}
         @endforeach
         {{$soals->links()}}
     </div>

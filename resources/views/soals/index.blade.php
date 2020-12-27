@@ -11,6 +11,19 @@
 
 
   <title>Daftar Soal</title>
+  @if(!Auth::guest() && Auth::user()->isKamiSama())
+  <link rel="stylesheet" href="{{asset('assets-t/tether/tether.min.css')}}">
+  <link rel="stylesheet" href="{{asset('assets-t/bootstrap/css/bootstrap.min.css')}}">
+  <link rel="stylesheet" href="{{asset('assets-t/bootstrap/css/bootstrap-grid.min.css')}}">
+  <link rel="stylesheet" href="{{asset('assets-t/bootstrap/css/bootstrap-reboot.min.css')}}">
+  <link rel="stylesheet" href="{{asset('assets-t/facebook-plugin/style.css')}}">
+  <link rel="stylesheet" href="{{asset('assets-t/dropdown/css/style.css')}}">
+  <link rel="stylesheet" href="{{asset('assets-t/animatecss/animate.css')}}">
+  <link rel="stylesheet" href="{{asset('assets-t/socicon/css/styles.css')}}">
+  <link rel="stylesheet" href="{{asset('assets-t/theme/css/style.css')}}">
+  <link rel="stylesheet" href="{{asset('assets-t/mobirise/css/mbr-additional.css')}}" type="text/css">
+  <link rel="preload" as="style" href="{{asset('assets-t/mobirise/css/mbr-additional.css')}}">
+  @else
   <link rel="stylesheet" href="{{asset('assets/tether/tether.min.css')}}">
   <link rel="stylesheet" href="{{asset('assets/bootstrap/css/bootstrap.min.css')}}">
   <link rel="stylesheet" href="{{asset('assets/bootstrap/css/bootstrap-grid.min.css')}}">
@@ -20,15 +33,16 @@
   <link rel="stylesheet" href="{{asset('assets/animatecss/animate.css')}}">
   <link rel="stylesheet" href="{{asset('assets/socicon/css/styles.css')}}">
   <link rel="stylesheet" href="{{asset('assets/theme/css/style.css')}}">
-  <link rel="preload" as="style" href="{{asset('assets/mobirise/css/mbr-additional.css')}}">
   <link rel="stylesheet" href="{{asset('assets/mobirise/css/mbr-additional.css')}}" type="text/css">
-
-
-
+  <link rel="preload" as="style" href="{{asset('assets/mobirise/css/mbr-additional.css')}}">
+  @endif
 
 </head>
 <body>
 
+    @if(!Auth::guest() && Auth::user()->isKamiSama())
+    @include('pages.navbartutor')
+    @else
   <section class="menu menu1 cid-sfXxlKtKAX" once="menu" id="menu1-1j">
 
 
@@ -72,6 +86,7 @@
         </div>
     </nav>
 </section>
+@endif
 
 <section class="features10 cid-sfXxlL7a6J" id="features11-1k">
     <!---->
@@ -81,6 +96,7 @@
         <div class="title">
             <h3 class="mbr-section-title mbr-fonts-style mb-4 display-2">
                 <strong>Daftar Soal</strong></h3>
+                @include('pages.msg')
 
         </div>
         @foreach ($soals as $soal)

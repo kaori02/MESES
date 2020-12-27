@@ -36,10 +36,12 @@ class HomeController extends Controller
         // $artikels = Artikel::latest()->take(3)->get();
         // $ambulan = Ambulan::count();
         // $posko = Posko_Kesehatan::count();
+        $userc = User::count();
+        $kelasc = Kelas::count();
         // $relawan = Relawan::select('nama')
         // ->where('status_relawan', '=', 'Diterima')->count();
         return view('pages.tutor'
-        // , compact('artikels','ambulan', 'posko', 'relawan')
+        , compact('userc','kelasc')
         );
     }
 

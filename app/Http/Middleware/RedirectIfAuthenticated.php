@@ -5,6 +5,7 @@ namespace App\Http\Middleware;
 use App\Providers\RouteServiceProvider;
 use Closure;
 use Illuminate\Support\Facades\Auth;
+use App\User;
 
 class RedirectIfAuthenticated
 {
@@ -18,7 +19,9 @@ class RedirectIfAuthenticated
      */
     public function handle($request, Closure $next, $guard = null)
     {
-        if (Auth::guard($guard)->check()) {
+        if (Auth::guard($guard)->check()) 
+        {
+            if(Auth::user()->isKamiSama()) return redirect('/tutor');
             return redirect('/');
         }
 

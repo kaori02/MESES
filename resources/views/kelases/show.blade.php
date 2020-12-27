@@ -12,6 +12,21 @@
 
 
     <title>Materi</title>
+    @if(!Auth::guest() && Auth::user()->isKamiSama())
+    <link rel="stylesheet" href="{{asset('assets-t/web/assets/mobirise-icons/mobirise-icons.css')}}">
+    <link rel="stylesheet" href="{{asset('assets-t/web/assets/mobirise-icons2/mobirise2.css')}}">
+    <link rel="stylesheet" href="{{asset('assets-t/tether/tether.min.css')}}">
+    <link rel="stylesheet" href="{{asset('assets-t/bootstrap/css/bootstrap.min.css')}}">
+    <link rel="stylesheet" href="{{asset('assets-t/bootstrap/css/bootstrap-grid.min.css')}}">
+    <link rel="stylesheet" href="{{asset('assets-t/bootstrap/css/bootstrap-reboot.min.css')}}">
+    <link rel="stylesheet" href="{{asset('assets-t/facebook-plugin/style.css')}}">
+    <link rel="stylesheet" href="{{asset('assets-t/dropdown/css/style.css')}}">
+    <link rel="stylesheet" href="{{asset('assets-t/animatecss/animate.css')}}">
+    <link rel="stylesheet" href="{{asset('assets-t/socicon/css/styles.css')}}">
+    <link rel="stylesheet" href="{{asset('assets-t/theme/css/style.css')}}">
+    <link rel="stylesheet" href="{{asset('assets-t/mobirise/css/mbr-additional.css')}}" type="text/css">
+    <link rel="preload" as="style" href="{{asset('assets-t/mobirise/css/mbr-additional.css')}}">
+    @else
     <link rel="stylesheet" href="{{asset('assets/web/assets/mobirise-icons/mobirise-icons.css')}}">
     <link rel="stylesheet" href="{{asset('assets/web/assets/mobirise-icons2/mobirise2.css')}}">
     <link rel="stylesheet" href="{{asset('assets/tether/tether.min.css')}}">
@@ -25,6 +40,7 @@
     <link rel="stylesheet" href="{{asset('assets/theme/css/style.css')}}">
     <link rel="stylesheet" href="{{asset('assets/mobirise/css/mbr-additional.css')}}" type="text/css">
     <link rel="preload" as="style" href="{{asset('assets/mobirise/css/mbr-additional.css')}}">
+    @endif
 
 
 
@@ -33,6 +49,9 @@
 
 <body>
 
+    @if(!Auth::guest() && Auth::user()->isKamiSama())
+    @include('pages.navbartutor')
+    @else
     <section class="menu menu1 cid-sfXkj8RjUf" once="menu" id="menu1-r">
 
 
@@ -84,6 +103,7 @@
             </div>
         </nav>
     </section>
+    @endif
 
     <section class="content4 cid-sfXl4B2KP5" id="content4-v">
 

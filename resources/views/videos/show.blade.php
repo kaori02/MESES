@@ -11,7 +11,22 @@
     <meta name="description" content="">
 
 
-    <title>video</title>
+    <title>Video</title>
+
+    @if(!Auth::guest() && Auth::user()->isKamiSama())
+    <link rel="stylesheet" href="{{asset('assets-t/web/assets/mobirise-icons2/mobirise2.css')}}">
+    <link rel="stylesheet" href="{{asset('assets-t/tether/tether.min.css')}}">
+    <link rel="stylesheet" href="{{asset('assets-t/bootstrap/css/bootstrap.min.css')}}">
+    <link rel="stylesheet" href="{{asset('assets-t/bootstrap/css/bootstrap-grid.min.css')}}">
+    <link rel="stylesheet" href="{{asset('assets-t/bootstrap/css/bootstrap-reboot.min.css')}}">
+    <link rel="stylesheet" href="{{asset('assets-t/facebook-plugin/style.css')}}">
+    <link rel="stylesheet" href="{{asset('assets-t/dropdown/css/style.css')}}">
+    <link rel="stylesheet" href="{{asset('assets-t/animatecss/animate.css')}}">
+    <link rel="stylesheet" href="{{asset('assets-t/socicon/css/styles.css')}}">
+    <link rel="stylesheet" href="{{asset('assets-t/theme/css/style.css')}}">
+    <link rel="stylesheet" href="{{asset('assets-t/mobirise/css/mbr-additional.css')}}" type="text/css">
+    <link rel="preload" as="style" href="{{asset('assets-t/mobirise/css/mbr-additional.css')}}">
+    @else
     <link rel="stylesheet" href="{{asset('assets/web/assets/mobirise-icons2/mobirise2.css')}}">
     <link rel="stylesheet" href="{{asset('assets/tether/tether.min.css')}}">
     <link rel="stylesheet" href="{{asset('assets/bootstrap/css/bootstrap.min.css')}}">
@@ -24,11 +39,15 @@
     <link rel="stylesheet" href="{{asset('assets/theme/css/style.css')}}">
     <link rel="stylesheet" href="{{asset('assets/mobirise/css/mbr-additional.css')}}" type="text/css">
     <link rel="preload" as="style" href="{{asset('assets/mobirise/css/mbr-additional.css')}}">
+    @endif
 
 </head>
 
 <body>
 
+    @if(!Auth::guest() && Auth::user()->isKamiSama())
+    @include('pages.navbartutor')
+    @else
     <section class="menu menu1 cid-sfXkj8RjUf" once="menu" id="menu1-18">
 
 
@@ -80,6 +99,7 @@
             </div>
         </nav>
     </section>
+    @endif
 
     <section class="content4 cid-sfXvhjKpPo" id="content4-1c">
 
@@ -167,10 +187,6 @@
                 <div class="row row-links">
                     <ul class="foot-menu">
 
-
-
-
-
                         <li class="foot-menu-item mbr-fonts-style display-7"></li>
                         <li class="foot-menu-item mbr-fonts-style display-7"></li>
                         <li class="foot-menu-item mbr-fonts-style display-7">&nbsp;&nbsp;</li>
@@ -246,7 +262,6 @@
     <script src="{{ asset('assets/viewportchecker/jquery.viewportchecker.js') }}"></script>
     <script src="{{ asset('assets/playervimeo/vimeo_player.js') }}"></script>
     <script src="{{ asset('assets/theme/js/script.js') }}"></script>
-
 
     <div id="scrollToTop" class="scrollToTop mbr-arrow-up"><a style="text-align: center;"><i
                 class="mbr-arrow-up-icon mbr-arrow-up-icon-cm cm-icon cm-icon-smallarrow-up"></i></a></div>

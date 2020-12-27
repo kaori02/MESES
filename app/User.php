@@ -36,4 +36,10 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function isKamiSama()
+    {
+        if ($this->role == 'admin' || $this->role == 'tutor') return true;
+        return false;
+    }
 }
