@@ -29,3 +29,4 @@ Route::get('/tutor/kelas', 'KelasController@tutor');
 Route::resource('soals', 'SoalController');
 Route::resource('videos', 'VideoController');
 Route::resource('kelases', 'KelasController');
+Route::resource('pembayaran', 'PembayaranController');

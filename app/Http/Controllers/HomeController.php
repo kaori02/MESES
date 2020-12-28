@@ -23,12 +23,13 @@ class HomeController extends Controller
     public function index(){
         // $artikels = Artikel::latest()->take(3)->get();
         // $ambulan = Ambulan::count();
-        $userc = User::count();
+        $userc = User::where('role', 'student')->count();
+        $tutorc = User::where('role', 'tutor')->count();
         $kelasc = Kelas::count();
         // $relawan = Relawan::select('nama')
         // ->where('status_relawan', '=', 'Diterima')->count();
         return view('pages.index'
-        , compact('userc','kelasc')
+        , compact('userc','kelasc','tutorc')
         );
     }
 
@@ -36,12 +37,13 @@ class HomeController extends Controller
         // $artikels = Artikel::latest()->take(3)->get();
         // $ambulan = Ambulan::count();
         // $posko = Posko_Kesehatan::count();
-        $userc = User::count();
+        $userc = User::where('role', 'student')->count();
+        $tutorc = User::where('role', 'tutor')->count();
         $kelasc = Kelas::count();
         // $relawan = Relawan::select('nama')
         // ->where('status_relawan', '=', 'Diterima')->count();
         return view('pages.tutor'
-        , compact('userc','kelasc')
+        , compact('userc','kelasc','tutorc')
         );
     }
 

@@ -188,17 +188,17 @@
             <div class="row align-items-center">
                 <div class="col-12 col-lg-6">
                     <div class="image-wrapper">
-                        <img src="/assets/images/4.jpg" alt="Mobirise">
+                        <img src="/storage/kelas_images/{{$kelas->images}}">
                         <p class="mbr-description mbr-fonts-style pt-2 align-center display-4">
-                            -</p>
+                            </p>
                     </div>
                 </div>
                 <div class="col-12 col-lg">
                     <div class="text-wrapper">
                         <h3 class="mbr-section-title mbr-fonts-style mb-3 display-5">
-                            <strong>{{$kelas->imagesdesc}}</strong></h3>
+                            <strong>Foto 1</strong></h3>
                         <p class="mbr-text mbr-fonts-style display-7">
-                            -</p>
+                            {{$kelas->imagesdesc}}</p>
                     </div>
                 </div>
             </div>
@@ -220,7 +220,6 @@
     </section>
 
     <section class="content8 cid-sfXkSD4lrT" id="content8-u">
-
         <div class="container">
             <div class="row justify-content-center">
                 <div class="counter-container col-md-12 col-lg-10">

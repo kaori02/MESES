@@ -22,7 +22,8 @@ class RedirectIfAuthenticated
         if (Auth::guard($guard)->check()) 
         {
             if(Auth::user()->isKamiSama()) return redirect('/tutor');
-            return redirect('/');
+            if(Auth::user()->isSubbed()) return redirect('/');
+            return redirect('/pembayaran/create');
         }
 
         return $next($request);

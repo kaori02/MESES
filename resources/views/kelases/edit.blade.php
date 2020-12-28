@@ -197,6 +197,7 @@
                                 <div class="form-group">
                                     {{Form::textarea('ans2', $kelas->ans2, ['id' => 'article-ckeditor', 'class' => 'form-control', 'placeholder' => 'Jawaban FAQ 2'])}}
                                 </div>
+                                {{Form::hidden('_method','PUT')}}
                                 <div class="col-lg-12 col-md-12 col-sm-12 align-center mbr-section-btn">
                                 {{Form::submit('Tambahkan', ['class'=>'btn btn-primary display-4'])}}
                                 </div>

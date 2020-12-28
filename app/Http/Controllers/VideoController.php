@@ -72,6 +72,10 @@ class VideoController extends Controller
      */
     public function show($id)
     {
+        if (!Auth::user()->isSubbed())
+        {
+            return redirect('/soals')->with('Error','Halaman ini tidak dapat diakses');
+        }
         $video = Video::find($id);
         return view('videos/show')->with('video',$video);
     }

@@ -105,7 +105,7 @@
                 <div class="row align-items-center">
                     <div class="col-12 col-md-2">
                         <div class="image-wrapper">
-                            <img src="{{asset('assets/images/product3.jpg')}}" alt="Mobirise" title="">
+                            <img src="/storage/soal_images/{{$soal[0]->cover_image}}" alt="Mobirise" title="">
                         </div>
                     </div>
                     <div class="col-12 col-md">
@@ -113,7 +113,7 @@
                             <div class="row">
                                 <div class="col-12">
                                     <div class="top-line">
-                                        <a href="/soals/{{$soal->id_kategori}}" style="color:#232323"><h4 class="card-title mbr-fonts-style display-5"><strong>{{$soal->nama_kategori}}</strong></h4></a>
+                                        <a href="/soals/{{$soal[0]->kategori_id}}" style="color:#232323"><h4 class="card-title mbr-fonts-style display-5"><strong>{{$soal[0]->nama_kategori}}</strong></h4></a>
                                         <p class="cost mbr-fonts-style display-5">
                                             ...</p>
                                     </div>
@@ -125,7 +125,7 @@
             </div>
         </div>
         @endforeach
-        {{$soals->links()}}
+        {{-- {{$soals->links()}} --}}
     </div>
 </section>
 

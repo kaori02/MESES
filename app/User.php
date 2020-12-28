@@ -42,4 +42,14 @@ class User extends Authenticatable
         if ($this->role == 'admin' || $this->role == 'tutor') return true;
         return false;
     }
+
+    public function isSubbed()
+    {
+        if ($this->issubscriber == 'true') return true;
+        return false;
+    }
+
+    public function isSubber(){
+        return $this->hasMany('App\Pembayaran');
+    }
 }

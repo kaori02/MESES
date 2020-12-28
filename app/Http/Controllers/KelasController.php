@@ -117,6 +117,10 @@ class KelasController extends Controller
      */
     public function show($id)
     {
+        if (!Auth::user()->isSubbed())
+        {
+            return redirect('/soals')->with('Error','Halaman ini tidak dapat diakses');
+        }
         $kelas = Kelas::find($id);
         return view('kelases/show')->with('kelas',$kelas);
     }

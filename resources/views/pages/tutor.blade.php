@@ -510,7 +510,7 @@
                             </div>
                             <div class="card-text">
                                 <h3 class="count pt-3 pb-3 mbr-fonts-style display-2">
-                                    200
+                                    {{$tutorc}}
                                 </h3>
                                 <h4 class="mbr-content-title mbr-bold mbr-fonts-style display-7">
                                     Tutor</h4>
@@ -555,6 +555,7 @@
                 <div class="carousel-inner">
 
 
+
                     <div class="carousel-item">
                         <div class="user col-md-8">
                             <div class="user_image">
@@ -562,36 +563,32 @@
                             </div>
                             <div class="user_text mb-4">
                                 <p class="mbr-fonts-style display-7">
-                                    Themes in the Mobirise website builder offer multiple blocks: intros, sliders,
-                                    galleries, forms, articles, and so on. Start a project and click on the red plus
-                                    buttons to see the blocks available for your theme.
+                                    MESES telah membantu saya dalam banyak hal - hal yang berkaitan dengan materi kuliah saya. Terima kasih kepada MESES, saya telah menemukan sumber materi yang mumpuni untuk perkuliahan saya. Saya merekomendasikan MESES untuk para mahasiswa kedokteran yang membutuhkan referensi materi yang notabene sulit untuk diakses, terlebih pada masa pandemi kali ini
                                 </p>
                             </div>
                             <div class="user_name mbr-fonts-style mb-2 display-7">
-                                <strong>Alexa</strong>
+                                <strong>Liona Marzia</strong>
                             </div>
                             <div class="user_desk mbr-fonts-style display-7">
-                                DESIGNER
+                                Mahasiswa Kedokteran
                             </div>
                         </div>
                     </div>
                     <div class="carousel-item">
                         <div class="user col-md-8">
                             <div class="user_image">
-                                <img src="assets/images/team2.jpg">
+                                <img src="assets/images/kita2.jpg">
                             </div>
                             <div class="user_text mb-4">
                                 <p class="mbr-fonts-style display-7">
-                                    Themes in the Mobirise website builder offer multiple blocks: intros, sliders,
-                                    galleries, forms, articles, and so on. Start a project and click on the red plus
-                                    buttons to see the blocks available for your theme.
+                                    Keren, materi yang di berikan sangat jelas dan mudah dipahami. Saya bisa mengimplementasikan materi pada MESES dengan praktikum kedokteran yang saya ikuti. Serta, soal - soal yang diberikan pada MESES sangat sesuai dengan soal - soal yang diujikan di perkuliahan. Memang terbaik!!
                                 </p>
                             </div>
                             <div class="user_name mbr-fonts-style mb-2 display-7">
-                                <strong>Linda</strong>
+                                <strong>Kintani Shurabi</strong>
                             </div>
                             <div class="user_desk mbr-fonts-style display-7">
-                                DEVELOPER
+                                Mahasiswa Kedokteran
                             </div>
                         </div>
                     </div>

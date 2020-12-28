@@ -11,7 +11,8 @@
     <meta name="description" content="">
 
 
-    <title>Tambah Video</title>
+    <title>Pembayaran</title>
+    @if(!Auth::guest() && Auth::user()->isKamiSama())
     <link rel="stylesheet" href="{{asset('assets-t/tether/tether.min.css')}}">
     <link rel="stylesheet" href="{{asset('assets-t/bootstrap/css/bootstrap.min.css')}}">
     <link rel="stylesheet" href="{{asset('assets-t/bootstrap/css/bootstrap-grid.min.css')}}">
@@ -26,20 +27,51 @@
     <link rel="stylesheet" href="{{asset('assets-t/theme/css/style.css')}}">
     <link rel="stylesheet" href="{{asset('assets-t/mobirise/css/mbr-additional.css')}}" type="text/css">
     <link rel="preload" as="style" href="{{asset('assets-t/mobirise/css/mbr-additional.css')}}">
+    @else
+    <link rel="stylesheet" href="{{asset('assets-t/tether/tether.min.css')}}">
+    <link rel="stylesheet" href="{{asset('assets-t/bootstrap/css/bootstrap.min.css')}}">
+    <link rel="stylesheet" href="{{asset('assets-t/bootstrap/css/bootstrap-grid.min.css')}}">
+    <link rel="stylesheet" href="{{asset('assets-t/bootstrap/css/bootstrap-reboot.min.css')}}">
+    <link rel="stylesheet" href="{{asset('assets-t/facebook-plugin/style.css')}}">
+    <link rel="stylesheet" href="{{asset('assets-t/dropdown/css/style.css')}}">
+    <link rel="stylesheet" href="{{asset('assets-t/animatecss/animate.css')}}">
+    <link rel="stylesheet" href="{{asset('assets-t/formstyler/jquery.formstyler.css')}}">
+    <link rel="stylesheet" href="{{asset('assets-t/formstyler/jquery.formstyler.theme.css')}}">
+    <link rel="stylesheet" href="{{asset('assets-t/datepicker/jquery.datetimepicker.min.css')}}">
+    <link rel="stylesheet" href="{{asset('assets-t/socicon/css/styles.css')}}">
+    <link rel="stylesheet" href="{{asset('assets-t/theme/css/style.css')}}">
+    <link rel="stylesheet" href="{{asset('assets-t/mobirise/css/mbr-additional.css')}}" type="text/css">
+    <link rel="preload" as="style" href="{{asset('assets-t/mobirise/css/mbr-additional.css')}}">
+
+    <link rel="stylesheet" href="{{asset('assets/tether/tether.min.css')}}">
+    <link rel="stylesheet" href="{{asset('assets/bootstrap/css/bootstrap.min.css')}}">
+    <link rel="stylesheet" href="{{asset('assets/bootstrap/css/bootstrap-grid.min.css')}}">
+    <link rel="stylesheet" href="{{asset('assets/bootstrap/css/bootstrap-reboot.min.css')}}">
+    <link rel="stylesheet" href="{{asset('assets/facebook-plugin/style.css')}}">
+    <link rel="stylesheet" href="{{asset('assets/dropdown/css/style.css')}}">
+    <link rel="stylesheet" href="{{asset('assets/animatecss/animate.css')}}">
+    <link rel="stylesheet" href="{{asset('assets/formstyler/jquery.formstyler.css')}}">
+    <link rel="stylesheet" href="{{asset('assets/formstyler/jquery.formstyler.theme.css')}}">
+    <link rel="stylesheet" href="{{asset('assets/datepicker/jquery.datetimepicker.min.css')}}">
+    <link rel="stylesheet" href="{{asset('assets/socicon/css/styles.css')}}">
+    <link rel="stylesheet" href="{{asset('assets/theme/css/style.css')}}">
+    <link rel="stylesheet" href="{{asset('assets/mobirise/css/mbr-additional.css')}}" type="text/css">
+    <link rel="preload" as="style" href="{{asset('assets/mobirise/css/mbr-additional.css')}}">
+    @endif
+
     
 </head>
 
 <body>
-
-    <section class="menu menu1 cid-sgFyRy4baw" once="menu" id="menu1-20">
-
-
+    @if(!Auth::guest() && Auth::user()->isKamiSama())
+    @include('pages.navbartutor')
+    @else
+    <section class="menu menu1 cid-sfXvYXKxbA" once="menu" id="menu1-1f">
         <nav class="navbar navbar-dropdown navbar-fixed-top navbar-expand-lg">
             <div class="container-fluid">
                 <div class="navbar-brand">
-
                     <span class="navbar-caption-wrap"><a class="navbar-caption text-black text-primary display-7"
-                            href="/tutor">MESES TUTOR</a></span>
+                            href="/">MESES</a></span>
                 </div>
                 <button class="navbar-toggler" type="button" data-toggle="collapse"
                     data-target="#navbarSupportedContent" aria-controls="navbarNavAltMarkup" aria-expanded="false"
@@ -53,32 +85,14 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav nav-dropdown nav-right" data-app-modern-menu="true">
-                        <li class="nav-item dropdown"><a
-                                class="nav-link link text-black text-primary dropdown-toggle display-4" href="#"
-                                data-toggle="dropdown-submenu" aria-expanded="false">
-                                Materi</a>
-                            <div class="dropdown-menu"><a class="text-black text-primary dropdown-item display-4"
-                                    href="/kelases">Daftar Materi</a><a
-                                    class="text-black text-primary dropdown-item display-4" href="/kelases/create">Tambah
-                                    Materi</a></div>
-                        </li>
-                        <li class="nav-item dropdown"><a
-                                class="nav-link link text-black text-primary dropdown-toggle display-4" href="#"
-                                data-toggle="dropdown-submenu" aria-expanded="false">
-                                Video</a>
-                            <div class="dropdown-menu"><a class="text-black text-primary dropdown-item display-4"
-                                    href="/videos">Daftar Video</a><a
-                                    class="text-black text-primary dropdown-item display-4" href="/videos/create">Tambah
-                                    Video</a></div>
-                        </li>
-                        <li class="nav-item dropdown"><a
-                                class="nav-link link text-black text-primary dropdown-toggle display-4" href="#"
-                                aria-expanded="false" data-toggle="dropdown-submenu">
-                                Soal</a>
-                            <div class="dropdown-menu"><a class="text-black text-primary dropdown-item display-4"
-                                    href="/soals" aria-expanded="false">Daftar Soal</a><a
-                                    class="text-black text-primary dropdown-item display-4" href="/soals/create"
-                                    aria-expanded="false">Tambah Soal</a></div>
+                        <li class="nav-item"><a class="nav-link link text-black text-primary display-4"
+                                href="/kelases">
+                                Kelas</a></li>
+                        <li class="nav-item"><a class="nav-link link text-black text-primary display-4"
+                                href="/videos">
+                                Video</a></li>
+                        <li class="nav-item"><a class="nav-link link text-black text-primary display-4"
+                                href="/soals">Soal</a>
                         </li>
                     </ul>
                     @if(!Auth::guest())
@@ -95,10 +109,12 @@
                     </div>
                     @endif
 
+
                 </div>
             </div>
         </nav>
     </section>
+    @endif
 
     <section class="form5 cid-sgFyRxCXub" id="form5-1z">
 
@@ -106,55 +122,123 @@
         <div class="container">
             <div class="mbr-section-head">
                 <h3 class="mbr-section-title mbr-fonts-style align-center mb-0 display-2">
-                    <strong>Tambah Video</strong></h3>
+                    <strong>Pembayaran</strong></h3>
 
             </div>
+            <br><br>
+            <div class="mbr-section-head">
+                <h5 class="mbr-section-title mbr-fonts-style align-left mb-0 display-7">
+                    Berikut ini merupakan beberapa rekening resmi untuk melakukan pembayaran MESES untuk account Anda, diantaranya sebagai berikut:</h5>
+
+            </div>
+            <br><br>
+            <div class="card">
+                <div class="card-wrapper">
+                    <div class="row align-items-center">
+                        <div class="col-12 col-md-2">
+                            <div class="image-wrapper">
+                                <img src="{{asset('assets/images/logo-bca.jpg')}}" alt="Mobirise" title="">
+                            </div>
+                        </div>
+                        <div class="col-12 col-md">
+                            <div class="card-box">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <div class="bottom-line">
+                                            <p class="mbr-text mbr-fonts-style m-0 display-5">BCA</p>
+                                            <p class="mbr-text mbr-fonts-style m-0 display-7">Nomor Rekening</p>
+                                            <p class="mbr-text mbr-fonts-style m-0 display-7">Atas Nama</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-wrapper">
+                    <div class="row align-items-center">
+                        <div class="col-12 col-md-2">
+                            <div class="image-wrapper">
+                                <img src="{{asset('assets/images/logo-bni.jpg')}}" alt="Mobirise" title="">
+                            </div>
+                        </div>
+                        <div class="col-12 col-md">
+                            <div class="card-box">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <div class="bottom-line">
+                                            <p class="mbr-text mbr-fonts-style m-0 display-5">BNI</p>
+                                            <p class="mbr-text mbr-fonts-style m-0 display-7">Nomor Rekening</p>
+                                            <p class="mbr-text mbr-fonts-style m-0 display-7">Atas Nama</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-wrapper">
+                    <div class="row align-items-center">
+                        <div class="col-12 col-md-2">
+                            <div class="image-wrapper">
+                                <img src="{{asset('assets/images/logo-mandiri.jpg')}}" alt="Mobirise" title="">
+                            </div>
+                        </div>
+                        <div class="col-12 col-md">
+                            <div class="card-box">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <div class="bottom-line">
+                                            <p class="mbr-text mbr-fonts-style m-0 display-5">Mandiri</p>
+                                            <p class="mbr-text mbr-fonts-style m-0 display-7">Nomor Rekening</p>
+                                            <p class="mbr-text mbr-fonts-style m-0 display-7">Atas Nama</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div><br><br>
             <div class="row justify-content-center mt-4">
                 <div class="col-lg-8 mx-auto mbr-form">
-                        {!! Form::open(['action' => 'KelasController@store', 'method' => 'POST', 'enctype' => 'multipart/form-data']) !!}
-                            <div class="form-group">
-                                {{Form::text('judul', '', ['class' => 'form-control', 'placeholder' => 'Judul'])}}
+                        {!! Form::open(['action' => 'PembayaranController@store', 'method' => 'POST', 'enctype' => 'multipart/form-data']) !!}
+                            <div class="form-group mbr-fonts-style display-7">
+                                &nbsp;&nbsp;&nbsp;
+                                {{Form::label('bank', 'Bank yang digunakan', ['class' => 'mbr-text mbr-fonts-style display-7'])}}
+                                &nbsp; &nbsp; &nbsp; &nbsp;
+                                {{Form::select('bank', ['BCA','BNI','Mandiri'])}}
                             </div>
                             <div class="form-group">
-                                {{Form::textarea('abstraksi', '', ['id' => 'article-ckeditor', 'class' => 'form-control', 'placeholder' => 'Abstraksi'])}}
+                                {{Form::text('norek', '', ['class' => 'form-control', 'placeholder' => 'Nomor Rekening'])}}
                             </div>
                             <div class="form-group">
-                                {{Form::textarea('body', '', ['id' => 'article-ckeditor', 'class' => 'form-control', 'placeholder' => 'Isi Materi'])}}
+                                {{Form::text('pemilikrek', '', ['class' => 'form-control', 'placeholder' => 'Pemilik Rekening'])}}
                             </div>
                             <div class="form-group">
-                                {{Form::text('link', '', ['class' => 'form-control', 'placeholder' => 'Link Embed Video'])}}
+                                {{Form::date('tgltransfer', '', ['class' => 'form-control', 'placeholder' => 'Tanggal Transfer'])}}
+                            </div>
+                            <div class="form-group mbr-fonts-style display-7">
+                                &nbsp;&nbsp;&nbsp;
+                                {{Form::label('jumlah', 'Paket yang dipilih', ['class' => 'mbr-text mbr-fonts-style display-7'])}}
+                                &nbsp; &nbsp; &nbsp; &nbsp;
+                                {{Form::select('jumlah', ['Paket 1 - RP','Paket 2 - RP','Paket 3 - RP'])}}
                             </div>
                             <div class="form-group">
-                                <p class="mbr-text mbr-fonts-style m-0 display-7">Upload Foto</p>
-                                <br>
-                                {{Form::file('images')}}
+                                {{Form::textarea('berita', '', ['class' => 'form-control', 'placeholder' => 'Berita'])}}
                             </div>
-                            <div class="form-group">
-                                {{Form::textarea('imagesdesc', '', ['id' => 'article-ckeditor', 'class' => 'form-control', 'placeholder' => 'Penjelasan Foto'])}}
-                            </div>
-                            <div class="form-group">
-                                {{Form::textarea('funfact', '', ['id' => 'article-ckeditor', 'class' => 'form-control', 'placeholder' => 'Fun Fact'])}}
-                            </div>
-                            <div class="form-group">
-                                {{Form::text('kesimpulan1', '', ['class' => 'form-control', 'placeholder' => 'Kesimpulan pertama'])}}
-                            </div>
-                            <div class="form-group">
-                                {{Form::text('kesimpulan2', '', ['class' => 'form-control', 'placeholder' => 'Kesimpulan kedua'])}}
-                            </div>
-                            <div class="form-group">
-                                {{Form::textarea('faq1', '', ['id' => 'article-ckeditor', 'class' => 'form-control', 'placeholder' => 'FAQ 1'])}}
-                            </div>
-                            <div class="form-group">
-                                {{Form::textarea('ans1', '', ['id' => 'article-ckeditor', 'class' => 'form-control', 'placeholder' => 'Jawaban FAQ 1'])}}
-                            </div>
-                            <div class="form-group">
-                                {{Form::textarea('faq2', '', ['id' => 'article-ckeditor', 'class' => 'form-control', 'placeholder' => 'FAQ 2'])}}
-                            </div>
-                            <div class="form-group">
-                                {{Form::textarea('ans2', '', ['id' => 'article-ckeditor', 'class' => 'form-control', 'placeholder' => 'Jawaban FAQ 2'])}}
+                            <div class="form-group mbr-fonts-style display-7">
+                                &nbsp;&nbsp;&nbsp;
+                                {{Form::label('caratransfer', 'Cara Transfer', ['class' => 'mbr-text mbr-fonts-style display-7'])}}
+                                &nbsp; &nbsp; &nbsp; &nbsp;
+                                {{Form::select('caratransfer', ['Setor Tunai','ATM','Mobile Banking','Internet Banking'])}}
                             </div>
                             <div class="col-lg-12 col-md-12 col-sm-12 align-center mbr-section-btn">
-                                {{Form::submit('Tambahkan', ['class'=>'btn btn-primary display-4'])}}
+                            {{Form::submit('Tambahkan Pembayaran', ['class'=>'btn btn-primary display-4'])}}
                             </div>
                         {!! Form::close() !!}    
                 </div>

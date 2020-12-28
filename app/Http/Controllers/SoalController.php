@@ -24,7 +24,7 @@ class SoalController extends Controller
 
     public function index()
     {
-        $soals = KategoriSoal::orderBy('id_kategori','asc')->paginate(5);
+        $soals = KategoriSoal::join('soals', 'soals.kategori_id', '=', 'kategori_soal.id_kategori')->paginate(5)->groupBy('kategori_id');
         return view('/soals/index')->with('soals', $soals);
     }
 
@@ -110,6 +110,10 @@ class SoalController extends Controller
      */
     public function show($id)
     {
+        if (!Auth::user()->isSubbed())
+        {
+            return redirect('/soals')->with('Error','Halaman ini tidak dapat diakses');
+        }
         $kategoris = KategoriSoal::find($id);
         $soals = Soal::where('kategori_id', $id)->paginate(10);
 

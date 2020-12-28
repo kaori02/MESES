@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AddCoverImageToKategoriSoal extends Migration
+class AddIssubscriberToUsersTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,8 @@ class AddCoverImageToKategoriSoal extends Migration
      */
     public function up()
     {
-        Schema::table('kategori_soal', function (Blueprint $table) {
-            $table->string('cover_image');
+        Schema::table('users', function (Blueprint $table) {
+            $table->string('issubscriber');
         });
     }
 
@@ -25,8 +25,8 @@ class AddCoverImageToKategoriSoal extends Migration
      */
     public function down()
     {
-        Schema::table('kategori_soal', function (Blueprint $table) {
-            $table->dropColumn('cover_image');
+        Schema::table('users', function (Blueprint $table) {
+            $table->dropColumn('issubscriber');
         });
     }
 }
