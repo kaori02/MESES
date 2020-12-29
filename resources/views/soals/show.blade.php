@@ -114,10 +114,10 @@
                                 <div class="col-12">
                                     <div class="bottom-line">
                                         <p class="mbr-text mbr-fonts-style m-0 display-7">{{$soal->body_soal}}
-                                            <br>{{$soal->a}}
-                                            <br>{{$soal->b}}
-                                            <br>{{$soal->c}}
-                                            <br>{{$soal->d}}
+                                            <br>A. {{$soal->a}}
+                                            <br>B. {{$soal->b}}
+                                            <br>C. {{$soal->c}}
+                                            <br>D. {{$soal->d}}
                                         </p>
                                     </div>
                                 </div>

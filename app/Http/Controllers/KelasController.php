@@ -22,7 +22,7 @@ class KelasController extends Controller
 
     public function index()
     {
-        $kelases = Kelas::orderBy('created_at','desc')->paginate(5);
+        $kelases = Kelas::orderBy('id_kelas','asc')->paginate(5);
         return view('kelases.index')->with('kelases', $kelases)
         ;
     }
@@ -85,7 +85,7 @@ class KelasController extends Controller
         }
         else
         {
-            $fileNameToStore = 'noimage.jpg';
+            $fileNameToStore = 'noimage.png';
         }
 
         //create kelas
@@ -117,9 +117,9 @@ class KelasController extends Controller
      */
     public function show($id)
     {
-        if (!Auth::user()->isSubbed())
+        if (!(Auth::user()->isKamiSama() || Auth::user()->isSubbed()))
         {
-            return redirect('/soals')->with('Error','Halaman ini tidak dapat diakses');
+            return redirect('/kelases')->with('Error','Halaman ini tidak dapat diakses');
         }
         $kelas = Kelas::find($id);
         return view('kelases/show')->with('kelas',$kelas);
@@ -224,7 +224,7 @@ class KelasController extends Controller
         }
 
         $kelas = Kelas::find($id);
-        if($kelas->images != 'noimage.jpg')
+        if($kelas->images != 'noimage.png')
         {
             //delete image
             Storage::delete('public/kelas_images/'.$kelas->images);

@@ -122,11 +122,9 @@
 
                         <div class="col-auto mbr-section-btn align-center">
                             <button type="submit" class="btn btn-primary display-4">Login</button>
-                            @if (Route::has('password.request'))
-                                <a style="text-decoration: none; font-family: 'Ubuntu', sans-serif;" class="btn btn-link" href="{{ route('password.request') }}">
-                                    {{ __('Forgot Your Password?') }}
-                                </a>
-                            @endif
+                            <a style="text-decoration: none; font-family: 'Ubuntu', sans-serif;" class="btn btn-link" href="/register">
+                                Belum Punya Akun? Register disini
+                            </a>
                         </div>
                     </div>
                 </form>

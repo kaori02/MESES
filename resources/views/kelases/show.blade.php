@@ -171,7 +171,7 @@
         <div class="container">
             <div class="media-container-row">
                 <div class="mbr-text col-12 mbr-fonts-style display-7 col-md-12">
-                    <p>&nbsp;&nbsp;&nbsp;&nbsp;
+                    <p class="">
                         {!!$kelas->body!!}
                     </p>
                 </div>
@@ -197,8 +197,9 @@
                     <div class="text-wrapper">
                         <h3 class="mbr-section-title mbr-fonts-style mb-3 display-5">
                             <strong>Foto 1</strong></h3>
-                        <p class="mbr-text mbr-fonts-style display-7">
-                            {{$kelas->imagesdesc}}</p>
+                        <div class="mbr-text mbr-fonts-style display-7 ">
+                            <p>{!!$kelas->imagesdesc!!}</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -212,7 +213,7 @@
                 <div class="col-12 col-md-10">
                     <blockquote>
                         <h5 class="mbr-section-title mbr-fonts-style mb-2 display-7"><strong>Tahukah Kamu?</strong></h5>
-                        <p class="mbr-text mbr-fonts-style display-4">{{$kelas->funfact}}</p>
+                        <div class="mbr-text mbr-fonts-style display-4"><p>{!!$kelas->funfact!!}</p></div>
                     </blockquote>
                 </div>
             </div>

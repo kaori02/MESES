@@ -138,6 +138,9 @@
                                     class="btn btn-primary display-4">Daftar</button>
                                     @if (Route::has('password.request'))
                                     @endif
+                                    <a style="text-decoration: none; font-family: 'Ubuntu', sans-serif;" class="btn btn-link" href="/login">
+                                        Sudah Punya Akun? Login disini
+                                    </a>
                             </div>
                         </div>
                     </form>

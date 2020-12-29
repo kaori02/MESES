@@ -7,6 +7,7 @@ use App\User;
 use App\KategoriSoal;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
 
 class SoalController extends Controller
@@ -24,7 +25,10 @@ class SoalController extends Controller
 
     public function index()
     {
-        $soals = KategoriSoal::join('soals', 'soals.kategori_id', '=', 'kategori_soal.id_kategori')->paginate(5)->groupBy('kategori_id');
+        $soals = KategoriSoal::join('soals', 'kategori_soal.id_kategori', '=', 'soals.kategori_id')
+        ->get()
+        ->where('cover_image', '!=', 'noimage.png')
+        ->sortBy('id_kategori')->groupBy('kategori_id');
         return view('/soals/index')->with('soals', $soals);
     }
 
@@ -83,7 +87,7 @@ class SoalController extends Controller
         }
         else
         {
-            $fileNameToStore = 'noimage.jpg';
+            $fileNameToStore = 'noimage.png';
         }
 
         //create adrtikel
@@ -110,7 +114,7 @@ class SoalController extends Controller
      */
     public function show($id)
     {
-        if (!Auth::user()->isSubbed())
+        if (!(Auth::user()->isKamiSama() || Auth::user()->isSubbed()))
         {
             return redirect('/soals')->with('Error','Halaman ini tidak dapat diakses');
         }
@@ -209,7 +213,7 @@ class SoalController extends Controller
             return redirect('/soals/'.$kategori)->with('Error','Halaman ini tidak dapat diakses');
         }
 
-        if($soal->cover_image != 'noimage.jpg')
+        if($soal->cover_image != 'noimage.png')
         {
             //delete image
             Storage::delete('public/soal_images/'.$soal->cover_image);

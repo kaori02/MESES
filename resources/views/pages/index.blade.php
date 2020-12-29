@@ -522,13 +522,7 @@
         </div>
     </section>
 
-    <section class="testimonails3 carousel slide testimonials-slider cid-sfXa9RuStR" data-interval="false"
-        id="testimonials3-c">
-
-
-
-
-
+    <section class="testimonails3 carousel slide testimonials-slider cid-sfXa9RuStR" data-interval="false" id="testimonials3-c">
         <div class="text-center container">
             <h3 class="mb-4 mbr-fonts-style display-2">
                 <strong>Testimoni</strong>
@@ -593,97 +587,131 @@
     </section>
 
     <section class="pricing2 cid-sfX2HlteAh" id="pricing2-7">
-
-
-
         <div class="container">
             <div class="row justify-content-center">
-                <div class="col-12 col-md-6 align-center col-lg-4">
+                <div class="col-12 col-md-6 align-center col-lg-6">
                     <div class="plan">
                         <div class="plan-header">
                             <h6 class="plan-title mbr-fonts-style mb-3 display-5">
                                 <strong>Bulanan</strong>
                             </h6>
                             <div class="plan-price">
-                                <p class="price mbr-fonts-style m-0 display-1"><strong>$19</strong></p>
-                                <p class="price-term mbr-fonts-style mb-3 display-7"><strong>Per month</strong>
+                                <p class="price mbr-fonts-style m-0 display-2"><strong>Rp 1.000.000</strong></p>
+                                {{-- <p class="price-term mbr-fonts-style mb-3 display-7"><strong>Per bulan</strong> --}}
                                 </p>
                             </div>
                         </div>
                         <div class="plan-body">
                             <div class="plan-list mb-4">
                                 <ul class="list-group mbr-fonts-style list-group-flush display-7">
-                                    <li class="list-group-item">Code Editor
+                                    {{-- <li style="opacity: 0.5;" class="list-group-item">Rangkuman Materi <span style="color: red">&#10008;</span>
                                     </li>
-                                    <li class="list-group-item">Mobirise Kit
+                                    <li class="list-group-item">Akses Gratis 1 Video
                                     </li>
-                                    <li class="list-group-item">Form Builder
+                                    <li style="opacity: 0.5;" class="list-group-item">Latihan Soal <span style="color: red">&#10008;</span>
                                     </li>
-                                    <li class="list-group-item">Popup Builder</li>
+                                    <li style="opacity: 0.5;" class="list-group-item">Forum QnA Bersama Tutor <span style="color: red">&#10008;</span></li> --}}
+                                    <li class="list-group-item">Rangkuman Materi
+                                    </li>
+                                    <li class="list-group-item">Akses Seluruh Video
+                                    </li>
+                                    <li class="list-group-item">Latihan Soal
+                                    </li>
+                                    <li class="list-group-item">Forum QnA Bersama Tutor</li>
                                 </ul>
                             </div>
                             <div class="mbr-section-btn text-center">
-                                <a href="https://mobiri.se" class="btn btn-primary display-4">Get started</a>
+                                <a href="/pembayaran/create" class="btn btn-primary display-4">Dapatkan Sekarang</a>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-12 col-md-6 align-center col-lg-4">
+                <div class="col-12 col-md-6 align-center col-lg-6 pb-5">
+                    <div class="plan">
+                        <div class="plan-header">
+                            <h6 class="plan-title mbr-fonts-style mb-3 display-5">
+                                <strong>Semester</strong>
+                            </h6>
+                            <div class="plan-price">
+                                <p class="price mbr-fonts-style m-0 display-2"><strong>Rp 5.000.000</strong></p>
+                                {{-- <p class="price-term mbr-fonts-style mb-3 display-7"><strong>Per bulan</strong> --}}
+                                </p>
+                            </div>
+                        </div>
+                        <div class="plan-body">
+                            <div class="plan-list mb-4">
+                                <ul class="list-group mbr-fonts-style list-group-flush display-7">
+                                    <li class="list-group-item">Rangkuman Materi
+                                    </li>
+                                    <li class="list-group-item">Akses Seluruh Video
+                                    </li>
+                                    <li class="list-group-item">Latihan Soal
+                                    </li>
+                                    <li class="list-group-item">Forum QnA Bersama Tutor</li>
+                                </ul>
+                            </div>
+                            <div class="mbr-section-btn text-center">
+                                <a href="/pembayaran/create" class="btn btn-primary display-4">Dapatkan Sekarang</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-12 col-md-6 align-center col-lg-6">
                     <div class="plan">
                         <div class="plan-header">
                             <h6 class="plan-title mbr-fonts-style mb-3 display-5">
                                 <strong>Tahunan</strong>
                             </h6>
                             <div class="plan-price">
-                                <p class="price mbr-fonts-style m-0 display-1"><strong>$19</strong></p>
-                                <p class="price-term mbr-fonts-style mb-3 display-7"><strong>Per year</strong>
+                                <p class="price mbr-fonts-style m-0 display-2"><strong>Rp 9.000.000</strong></p>
                                 </p>
                             </div>
                         </div>
                         <div class="plan-body">
                             <div class="plan-list mb-4">
                                 <ul class="list-group mbr-fonts-style list-group-flush display-7">
-                                    <li class="list-group-item">Code Editor
+                                    <li class="list-group-item">Rangkuman Materi
                                     </li>
-                                    <li class="list-group-item">Mobirise Kit
+                                    <li class="list-group-item">Akses Seluruh Video
                                     </li>
-                                    <li class="list-group-item">Form Builder
+                                    <li class="list-group-item">Latihan Soal
                                     </li>
-                                    <li class="list-group-item">Popup Builder</li>
+                                    <li class="list-group-item">Forum QnA Bersama Tutor</li>
                                 </ul>
                             </div>
                             <div class="mbr-section-btn text-center">
-                                <a href="https://mobiri.se" class="btn btn-primary display-4">Get started</a>
+                                <a href="/pembayaran/create" class="btn btn-primary display-4">Dapatkan Sekarang</a>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-12 col-md-6 align-center col-lg-4">
+                <div class="col-12 col-md-6 align-center col-lg-6">
                     <div class="plan">
                         <div class="plan-header">
                             <h6 class="plan-title mbr-fonts-style mb-3 display-5">
                                 <strong>Sarjana</strong>
                             </h6>
                             <div class="plan-price">
-                                <p class="price mbr-fonts-style m-0 display-1"><strong>$399</strong></p>
-                                <p class="price-term mbr-fonts-style mb-3 display-7"><strong>One time</strong>
+                                <p class="price mbr-fonts-style m-0 display-2"><strong>Rp 35.000.000</strong></p>
+                                <p class="price-term mbr-fonts-style mb-3 display-7"><strong>4 tahun</strong>
                                 </p>
                             </div>
                         </div>
                         <div class="plan-body">
                             <div class="plan-list mb-4">
                                 <ul class="list-group mbr-fonts-style list-group-flush display-7">
-                                    <li class="list-group-item">Code Editor
+                                    <li class="list-group-item">Rangkuman Materi
                                     </li>
-                                    <li class="list-group-item">Mobirise Kit
+                                    <li class="list-group-item">Akses Seluruh Video
                                     </li>
-                                    <li class="list-group-item">Form Builder
+                                    <li class="list-group-item">Latihan Soal
                                     </li>
-                                    <li class="list-group-item">Popup Builder</li>
+                                    <li class="list-group-item">Forum QnA Bersama Tutor</li>
                                 </ul>
                             </div>
                             <div class="mbr-section-btn text-center">
-                                <a href="https://mobiri.se" class="btn btn-primary display-4">Get started</a>
+                                <a href="/pembayaran/create" class="btn btn-primary display-4">Dapatkan Sekarang</a>                                
                             </div>
                         </div>
                     </div>

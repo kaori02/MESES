@@ -211,7 +211,7 @@
                                 &nbsp;&nbsp;&nbsp;
                                 {{Form::label('bank', 'Bank yang digunakan', ['class' => 'mbr-text mbr-fonts-style display-7'])}}
                                 &nbsp; &nbsp; &nbsp; &nbsp;
-                                {{Form::select('bank', ['BCA','BNI','Mandiri'])}}
+                                {{Form::select('bank', ['BCA' => 'BCA','BNI' => 'BNI','Mandiri' => 'Mandiri'])}}
                             </div>
                             <div class="form-group">
                                 {{Form::text('norek', '', ['class' => 'form-control', 'placeholder' => 'Nomor Rekening'])}}
@@ -226,16 +226,19 @@
                                 &nbsp;&nbsp;&nbsp;
                                 {{Form::label('jumlah', 'Paket yang dipilih', ['class' => 'mbr-text mbr-fonts-style display-7'])}}
                                 &nbsp; &nbsp; &nbsp; &nbsp;
-                                {{Form::select('jumlah', ['Paket 1 - RP','Paket 2 - RP','Paket 3 - RP'])}}
+                                {{Form::select('jumlah', ['Rp 1.000.000'  => 'Paket Bulanan - Rp 1.000.000',
+                                                          'Rp 5.000.000'  => 'Paket Semester - Rp 5.000.000',
+                                                          'Rp 9.000.000'  => 'Paket Tahunan - Rp 9.000.000',
+                                                          'Rp 35.000.000' => 'Paket Sarjana - Rp 35.000.000'])}}
                             </div>
                             <div class="form-group">
-                                {{Form::textarea('berita', '', ['class' => 'form-control', 'placeholder' => 'Berita'])}}
+                                {{Form::textarea('berita', '', ['class' => 'form-control', 'placeholder' => 'Berita Transfer'])}}
                             </div>
                             <div class="form-group mbr-fonts-style display-7">
                                 &nbsp;&nbsp;&nbsp;
                                 {{Form::label('caratransfer', 'Cara Transfer', ['class' => 'mbr-text mbr-fonts-style display-7'])}}
                                 &nbsp; &nbsp; &nbsp; &nbsp;
-                                {{Form::select('caratransfer', ['Setor Tunai','ATM','Mobile Banking','Internet Banking'])}}
+                                {{Form::select('caratransfer', ['Setor Tunai' => 'Setor Tunai','ATM' => 'ATM','Mobile Banking' => 'Mobile Banking','Internet Banking' =>'Internet Banking'])}}
                             </div>
                             <div class="col-lg-12 col-md-12 col-sm-12 align-center mbr-section-btn">
                             {{Form::submit('Tambahkan Pembayaran', ['class'=>'btn btn-primary display-4'])}}

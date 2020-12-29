@@ -22,6 +22,7 @@ class VideoController extends Controller
 
     public function index()
     {
+        // $videos = Video::orderBy('created_at','desc')->skip(10)->paginate(5);
         $videos = Video::orderBy('created_at','desc')->paginate(5);
         return view('videos.index')->with('videos', $videos)
         ;
@@ -72,11 +73,17 @@ class VideoController extends Controller
      */
     public function show($id)
     {
-        if (!Auth::user()->isSubbed())
-        {
-            return redirect('/soals')->with('Error','Halaman ini tidak dapat diakses');
-        }
+        $videofree = Video::orderBy('created_at','desc')->first();
         $video = Video::find($id);
+
+        if (!(Auth::user()->isKamiSama() || Auth::user()->isSubbed()))
+        {
+            if ($videofree != $video){
+                return redirect('/videos')->with('Error','Halaman ini tidak dapat diakses');
+            }
+        }
+        
+        // $video = Video::find($id);
         return view('videos/show')->with('video',$video);
     }
 
@@ -92,6 +99,7 @@ class VideoController extends Controller
         {
             return redirect('/videos')->with('Error','Halaman ini tidak dapat diakses');
         }
+
         $video = Video::find($id);
         return view('videos/edit')->with('video',$video);
     }
