@@ -101,6 +101,7 @@ class SoalController extends Controller
         $soal->kategori_id = $request->input('kategori_id');
         $kate = $soal->kategori_id;
         $soal->cover_image = $fileNameToStore;
+        $soal->is_show_ans = 'false';
         $soal->save();
 
         return redirect('/soals/'.$kate)->with('Success',"Soal Baru Berhasil Ditambah");
@@ -124,6 +125,24 @@ class SoalController extends Controller
         return view('soals/show', compact('kategoris','soals'));
     }
 
+    public function showAnswer($id)
+    {
+        Soal::where('kategori_id', $id)->update(['is_show_ans' => 'true']);
+        
+        $kategoris = KategoriSoal::find($id);
+        $soals = Soal::where('kategori_id', $id)->paginate(10);
+        return view('soals/show', compact('kategoris','soals'));
+    }
+
+    public function hideAnswer($id)
+    {
+        Soal::where('kategori_id', $id)->update(['is_show_ans' => 'false']);
+        
+        $kategoris = KategoriSoal::find($id);
+        $soals = Soal::where('kategori_id', $id)->paginate(10);
+        return view('soals/show', compact('kategoris','soals'));
+
+    }
     /**
      * Show the form for editing the specified resource.
      *

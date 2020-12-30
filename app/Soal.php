@@ -13,5 +13,11 @@ class Soal extends Model
     {
         return $this->belongsTo('App\KategoriSoal');
     }
+    
+    public function isShowAns()
+    {
+        if($this->is_show_ans == 'true') return true;
+        return false;
+    }
 }
 

@@ -118,6 +118,9 @@
                                             <br>B. {{$soal->b}}
                                             <br>C. {{$soal->c}}
                                             <br>D. {{$soal->d}}
+                                            @if($soal->isShowAns())
+                                            <br><strong>Jawaban : {{$soal->jawaban}}</strong>
+                                            @endif
                                         </p>
                                     </div>
                                 </div>
@@ -129,6 +132,18 @@
         </div>
         @endforeach
         {{$soals->links()}}
+        <div class="col-lg-12 col-md-12 col-sm-12 align-center mbr-section-btn">
+            
+            @if(!$soal->isShowAns())
+            <a href="/soals/showanswer/{{$kategoris->id_kategori}}" class="btn btn-info display-4 float-right">
+                Lihat Jawaban
+            </a>
+            @else
+            <a href="/soals/hideanswer/{{$kategoris->id_kategori}}" class="btn btn-info display-4 float-right">
+                Sembunyikan Jawaban
+            </a>
+            @endif
+        </div>
     </div>
 </section>
 

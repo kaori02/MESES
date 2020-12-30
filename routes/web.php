@@ -26,6 +26,10 @@ Route::get('/tutor', 'HomeController@tutor');
 Route::get('/tutor/soals', 'SoalController@tutor');
 Route::get('/tutor/kelas', 'KelasController@tutor');
 
+Route::get('/soals/showanswer/{id}', 'SoalController@showAnswer');
+Route::get('/soals/hideanswer/{id}', 'SoalController@hideAnswer');
+
+
 Route::resource('soals', 'SoalController');
 Route::resource('videos', 'VideoController');
 Route::resource('kelases', 'KelasController');
