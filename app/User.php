@@ -39,17 +39,19 @@ class User extends Authenticatable
 
     public function isKamiSama()
     {
-        if ($this->role == 'admin' || $this->role == 'tutor') return true;
-        return false;
+        return ($this->role == 'admin' || $this->role == 'tutor');
     }
 
     public function isSubbed()
     {
-        if ($this->issubscriber == 'true') return true;
-        return false;
+        return ($this->issubscriber == 'true');
     }
 
     public function isSubber(){
         return $this->hasMany('App\Pembayaran');
+    }
+
+    public function isSubbewr(){
+        return $this->hasMany('App\Subscription');
     }
 }

@@ -47,6 +47,18 @@ class HomeController extends Controller
         );
     }
 
+    public function tutorus(){
+        // $artikels = Artikel::latest()->take(3)->get();
+        // $ambulan = Ambulan::count();
+        // $posko = Posko_Kesehatan::count();
+        $tutorus = User::where('role', 'tutor')->get();
+        // $relawan = Relawan::select('nama')
+        // ->where('status_relawan', '=', 'Diterima')->count();
+        return view('pages.tutorus'
+        , compact('tutorus')
+        );
+    }
+
     public function home(){
         // $artikels = Artikel::latest()->take(3)->get();
         // $ambulan = Ambulan::count();

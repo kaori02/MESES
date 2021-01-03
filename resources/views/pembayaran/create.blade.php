@@ -203,7 +203,14 @@
                         </div>
                     </div>
                 </div>
-            </div><br><br>
+            </div>
+            <br>
+            <div class="mbr-section-head rounded" style="background:#CEDDB9; padding: 20px">
+                <h5 class="mbr-section-title mbr-fonts-style align-left mb-0 display-7 ">
+                    Jam Kerja Pembayaran: 09:00 - 17:00 WIB</h5>
+
+            </div>
+            <br>
             <div class="row justify-content-center mt-4">
                 <div class="col-lg-8 mx-auto mbr-form">
                         {!! Form::open(['action' => 'PembayaranController@store', 'method' => 'POST', 'enctype' => 'multipart/form-data']) !!}

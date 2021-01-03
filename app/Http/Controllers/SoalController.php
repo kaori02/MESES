@@ -107,6 +107,40 @@ class SoalController extends Controller
         return redirect('/soals/'.$kate)->with('Success',"Soal Baru Berhasil Ditambah");
     }
 
+    public function checkAllAns($id)
+    {
+        $soals = Soal::where('kategori_id', $id)->get();
+
+        $inputArr = ["B","A","A","C","A"
+                    ,"A","D","A","A","B"
+                    ,"C","A","A","B","C"
+                    ,"A","B","A","B","C"];
+        
+        $AnswerStatus = [];
+        $TrueAnswer = [];
+        // return gettype($soals[0]->jawaban);
+        $i = 0;
+        foreach($soals as $soal)
+        {
+            $soalChecking = Soal::find($soal->id_soal);
+            $TrueAnswer[$i] = $soalChecking->jawaban;
+            $AnswerStatus[$i] = ($soalChecking->jawaban == $inputArr[$i]);
+            $i++;
+        }
+        $numTrue = 0;
+        for($i = 0; $i < count($AnswerStatus); $i++)
+        {
+            if($AnswerStatus[$i]) $numTrue++;
+        }
+        // return $numTrue;
+        return "Banyak soal = ".count($soals)."<br> Jumlah benar = ".$numTrue
+        ."<br> input jawaban = ".implode(", ",$inputArr)
+        ."<br> jawaban benar = ".implode(", ",$TrueAnswer)
+        ."<br> status jawaban = ".implode(", ",$AnswerStatus);
+        
+        showAnswer($id);
+    }
+
     /**
      * Display the specified resource.
      *

@@ -195,13 +195,13 @@
                             <img src="assets/images/background3.jpg" alt="Mobirise">
                         </div>
                         <div class="card-box">
-                            <h4 class="card-title mbr-fonts-style display-7">Diskusi Interaktif</h4>
+                            <h4 class="card-title mbr-fonts-style display-7">Tutor Berpengalaman</h4>
                             <p class="mbr-text mbr-fonts-style display-7">
-                                Diskusi interaktif untuk memperdalam pemahaman mahasiswa terhadap materi
+                                Tutor Berpengalaman membantu anda dengan diskusi interaktif untuk memperdalam pemahaman mahasiswa terhadap materi
                             </p>
                         </div>
                         <div class="mbr-section-btn text-center">
-                            <a href="#" class="btn btn-primary display-4">
+                            <a href="/tutorus" class="btn btn-primary display-4">
                                 Learn More
                             </a>
                         </div>
