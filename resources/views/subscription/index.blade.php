@@ -74,6 +74,9 @@
                         <li class="nav-item"><a class="nav-link link text-black text-primary display-4"
                                 href="/soals">Soal</a>
                         </li>
+                        <li class="nav-item"><a class="nav-link link text-black text-primary display-4" href="/aboutus">
+                            Tentang Kami</a>
+                        </li>
                     </ul>
                     @if(!Auth::guest())
                     <div class="navbar-buttons mbr-section-btn">
@@ -85,7 +88,7 @@
 
                          <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                              @csrf
-                         </form>    
+                         </form>
                     </div>
                     @endif
 
@@ -98,7 +101,7 @@
 
     <section class="features10 cid-sfXmAIMAkX" id="features11-13">
         <!---->
-        
+
         <div class="container">
             <div class="title">
                 <h3 class="mbr-section-title mbr-fonts-style mb-4 display-2">

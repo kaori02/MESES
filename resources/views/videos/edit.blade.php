@@ -26,17 +26,17 @@
     <link rel="stylesheet" href="{{asset('assets-t/theme/css/style.css')}}">
     <link rel="stylesheet" href="{{asset('assets-t/mobirise/css/mbr-additional.css')}}" type="text/css">
     <link rel="preload" as="style" href="{{asset('assets-t/mobirise/css/mbr-additional.css')}}">
-    
+
     <style>
         body {font-family: Arial;}
-        
+
         /* Style the tab */
         .tab {
           overflow: hidden;
           border: 1px solid #ccc;
           background-color: #f1f1f1;
         }
-        
+
         /* Style the buttons inside the tab */
         .tab button {
           background-color: inherit;
@@ -48,17 +48,17 @@
           transition: 0.3s;
           font-size: 17px;
         }
-        
+
         /* Change background color of buttons on hover */
         .tab button:hover {
           background-color: #ddd;
         }
-        
+
         /* Create an active/current tablink class */
         .tab button.active {
           background-color: #ccc;
         }
-        
+
         /* Style the tab content */
         .tabcontent {
           display: none;
@@ -121,6 +121,9 @@
                                     class="text-black text-primary dropdown-item display-4" href="/soals/create"
                                     aria-expanded="false">Tambah Soal</a></div>
                         </li>
+                        <li class="nav-item"><a class="nav-link link text-black text-primary display-4" href="/aboutus">
+                            Tentang Kami</a>
+                        </li>
                     </ul>
                     @if(!Auth::guest())
                     <div class="navbar-buttons mbr-section-btn">
@@ -132,7 +135,7 @@
 
                          <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                              @csrf
-                         </form>    
+                         </form>
                     </div>
                     @endif
 
@@ -142,17 +145,17 @@
     </section>
 
     <section class="form5 cid-sgFyRxCXub" id="form5-1z">
-        <div class="container">    
+        <div class="container">
             <div class="tab">
             <button class="tablinks" onclick="openCity(event, 'London')">Edit</button>
             <button class="tablinks" onclick="openCity(event, 'Paris')">Hapus</button>
             </div>
-    
+
             <div id="London" class="tabcontent">
                 <div class="mbr-section-head">
                     <h3 class="mbr-section-title mbr-fonts-style align-center mb-0 display-2">
                         <strong>Edit Video</strong></h3>
-    
+
                 </div>
                 <div class="row justify-content-center mt-4">
                     <div class="col-lg-8 mx-auto mbr-form">
@@ -173,17 +176,17 @@
                                 <div class="col-lg-12 col-md-12 col-sm-12 align-center mbr-section-btn">
                                 {{Form::submit('Simpan', ['class'=>'btn btn-primary display-4'])}}
                                 </div>
-                            {!! Form::close() !!}  
+                            {!! Form::close() !!}
                     </div>
                 </div>
             </div>
-    
+
             <div id="Paris" class="tabcontent">
                 <div class="row justify-content-center">
                             {!!Form::open(['action' => ['VideoController@destroy', $video->id_video], 'method' => 'POST', 'class' => 'float-right'])!!}
                             {{Form::hidden('_method', 'DELETE')}}
                             {{Form::submit('Hapus', ['class' => 'btn btn-secondary display-4'])}}
-                            {!!Form::close() !!} 
+                            {!!Form::close() !!}
                 </div>
             </div>
         </div>

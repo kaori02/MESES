@@ -59,6 +59,9 @@
                         <li class="nav-item"><a class="nav-link link text-black text-primary display-4"
                                 href="/soals">Soal</a>
                         </li>
+                        <li class="nav-item"><a class="nav-link link text-black text-primary display-4" href="/aboutus">
+                            Tentang Kami</a>
+                        </li>
                     </ul>
                     @if(!Auth::guest())
                     <div class="navbar-buttons mbr-section-btn">
@@ -67,10 +70,10 @@
                                           document.getElementById('logout-form').submit();">
                              {{ __('Keluar') }}
                          </a>
-    
+
                          <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                              @csrf
-                         </form>    
+                         </form>
                     </div>
                     @endif
                 </div>
@@ -108,7 +111,7 @@
 
                             <div class="col-lg-12 col-md-12 col-sm-12 form-group" data-for="email">
                                 <input id="email" type="email" name="email" placeholder="Email"
-                                required autocomplete="email" 
+                                required autocomplete="email"
                                 class="form-control @error('email') is-invalid @enderror" value="" autofocus>
                                 @error('email')
                                 <span class="invalid-feedback" role="alert">
@@ -116,9 +119,9 @@
                                 </span>
                                 @enderror
                             </div>
-                            
+
                             <div data-for="password" class="col-lg-12 col-md-12 col-sm-12 form-group">
-                                <input id="password" type="password" name="password" placeholder="Password" 
+                                <input id="password" type="password" name="password" placeholder="Password"
                                 required autocomplete="new-password"
                                     class="form-control @error('password') is-invalid @enderror">
                                 @error('password')
@@ -129,7 +132,7 @@
                             </div>
 
                             <div data-for="password-confirm" class="col-lg-12 col-md-12 col-sm-12 form-group">
-                                <input id="password-confirm" type="password" name="password_confirmation" placeholder="Confirm Password" 
+                                <input id="password-confirm" type="password" name="password_confirmation" placeholder="Confirm Password"
                                 required autocomplete="new-password"
                                 class="form-control">
                             </div>

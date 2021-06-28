@@ -62,6 +62,9 @@
                         <li class="nav-item"><a class="nav-link link text-black text-primary display-4"
                                 href="/soals">Soal</a>
                         </li>
+                        <li class="nav-item"><a class="nav-link link text-black text-primary display-4" href="/aboutus">
+                            Tentang Kami</a>
+                        </li>
                     </ul>
                     @if(!Auth::guest())
                     <div class="navbar-buttons mbr-section-btn">
@@ -73,7 +76,7 @@
 
                          <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                              @csrf
-                         </form>    
+                         </form>
                     </div>
                     @endif
                 </div>
@@ -663,7 +666,7 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="col-12 col-md-6 align-center col-lg-6">
                     <div class="plan">
                         <div class="plan-header">
@@ -718,7 +721,7 @@
                                 </ul>
                             </div>
                             <div class="mbr-section-btn text-center">
-                                <a href="/pembayaran/create" class="btn btn-primary display-4">Dapatkan Sekarang</a>                                
+                                <a href="/pembayaran/create" class="btn btn-primary display-4">Dapatkan Sekarang</a>
                             </div>
                         </div>
                     </div>

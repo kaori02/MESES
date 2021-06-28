@@ -8,8 +8,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
   <link rel="shortcut icon" href="{{asset('assets-t/images/text-128x78-1.png')}}" type="image/x-icon">
   <meta name="description" content="">
-  
-  
+
+
   <title>Tambah Soal</title>
   <link rel="stylesheet" href="{{asset('assets-t/tether/tether.min.css')}}">
   <link rel="stylesheet" href="{{asset('assets-t/bootstrap/css/bootstrap.min.css')}}">
@@ -24,15 +24,15 @@
   <link rel="stylesheet" href="{{asset('assets-t/socicon/css/styles.css')}}">
   <link rel="stylesheet" href="{{asset('assets-t/theme/css/style.css')}}">
   <link rel="preload" as="style" href="{{asset('assets-t/mobirise/css/mbr-additional.css')}}">
-  <link rel="stylesheet" href="{{asset('assets-t/mobirise/css/mbr-additional.css')}}" type="text/css">  
+  <link rel="stylesheet" href="{{asset('assets-t/mobirise/css/mbr-additional.css')}}" type="text/css">
 </head>
 <body>
-  
+
   <section class="menu menu1 cid-sgFzdPtcTC" once="menu" id="menu1-23">
     <nav class="navbar navbar-dropdown navbar-fixed-top navbar-expand-lg">
         <div class="container-fluid">
             <div class="navbar-brand">
-                
+
                 <span class="navbar-caption-wrap"><a class="navbar-caption text-black text-primary display-7" href="/tutor">MESES TUTOR</a></span>
             </div>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -48,17 +48,21 @@
                             Materi</a><div class="dropdown-menu"><a class="text-black text-primary dropdown-item display-4" href="/kelases">Daftar Materi</a><a class="text-black text-primary dropdown-item display-4" href="/kelases/create">Tambah Materi</a></div></li>
                     <li class="nav-item dropdown"><a class="nav-link link text-black text-primary dropdown-toggle display-4" href="#" data-toggle="dropdown-submenu" aria-expanded="false">
                             Video</a><div class="dropdown-menu"><a class="text-black text-primary dropdown-item display-4" href="/videos">Daftar Video</a><a class="text-black text-primary dropdown-item display-4" href="/videos/create">Tambah Video</a></div></li><li class="nav-item dropdown"><a class="nav-link link text-black text-primary dropdown-toggle display-4" href="#" aria-expanded="false" data-toggle="dropdown-submenu">
-                            Soal</a><div class="dropdown-menu"><a class="text-black text-primary dropdown-item display-4" href="/soals" aria-expanded="false">Daftar Soal</a><a class="text-black text-primary dropdown-item display-4" href="/soals/create" aria-expanded="false">Tambah Soal</a></div></li></ul>
-                
-                
+                            Soal</a><div class="dropdown-menu"><a class="text-black text-primary dropdown-item display-4" href="/soals" aria-expanded="false">Daftar Soal</a><a class="text-black text-primary dropdown-item display-4" href="/soals/create" aria-expanded="false">Tambah Soal</a></div></li>
+                            <li class="nav-item"><a class="nav-link link text-black text-primary display-4" href="/aboutus">
+                                Tentang Kami</a>
+                            </li>
+                        </ul>
+
+
             </div>
         </div>
     </nav>
 </section>
 
 <section class="form5 cid-sgFzdP2n6c" id="form5-22">
-    
-    
+
+
     <div class="container">
         <div class="mbr-section-head">
             <h3 class="mbr-section-title mbr-fonts-style align-center mb-0 display-2">
@@ -93,13 +97,13 @@
                         {{Form::label('jawaban', 'Jawaban Benar', ['class' => 'mbr-text mbr-fonts-style display-7'])}}
                         {{Form::text('jawaban', '', ['class' => 'form-control', 'placeholder' => 'Jawaban Benar Disini'])}}
                     </div>
-    
+
                     <div class="form-group mbr-fonts-style display-7">
                         {{Form::label('kategori_id', 'Blok Soal', ['class' => 'mbr-text mbr-fonts-style display-7'])}}
                         &nbsp; &nbsp; &nbsp; &nbsp;
                         {{Form::select('kategori_id', $kategoris)}}
                     </div>
-    
+
                     <div class="form-group mbr-fonts-style display-7">
                         {{Form::file('cover_image')}}
                     </div>
@@ -115,21 +119,21 @@
         <div class="media-container-row align-center mbr-white">
             <div class="row row-links">
                 <ul class="foot-menu">
-                    
-                    
-                    
-                    
-                    
+
+
+
+
+
                 <li class="foot-menu-item mbr-fonts-style display-7"></li><li class="foot-menu-item mbr-fonts-style display-7"></li><li class="foot-menu-item mbr-fonts-style display-7">&nbsp;&nbsp;</li><li class="foot-menu-item mbr-fonts-style display-7"></li><li class="foot-menu-item mbr-fonts-style display-7"></li></ul>
             </div>
             <div class="row social-row">
                 <div class="social-list align-right pb-2">
-                    
-                    
-                    
-                    
-                    
-                    
+
+
+
+
+
+
                 <div class="soc-item">
                         <a href="https://twitter.com/mobirise" target="_blank">
                             <span class="socicon-twitter socicon mbr-iconfont mbr-iconfont-social"></span>
@@ -170,21 +174,21 @@
 <script src="{{asset('assets-t/popper/popper.min.js')}}"></script>
 <script src="{{asset('assets-t/tether/tether.min.js')}}"></script>
 <script src="{{asset('assets-t/bootstrap/js/bootstrap.min.js')}}"></script>
-<script src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.5"></script>  
-<script src="https://apis.google.com/js/plusone.js"></script>  
-<script src="{{asset('assets-t/facebook-plugin/facebook-script.js')}}"></script>  
-<script src="{{asset('assets-t/smoothscroll/smooth-scroll.js')}}"></script>  
-<script src="{{asset('assets-t/formstyler/jquery.formstyler.js')}}"></script>  
-<script src="{{asset('assets-t/formstyler/jquery.formstyler.min.js')}}"></script>  
-<script src="{{asset('assets-t/datepicker/jquery.datetimepicker.full.js')}}"></script>  
-<script src="{{asset('assets-t/viewportchecker/jquery.viewportchecker.js')}}"></script>  
-<script src="{{asset('assets-t/dropdown/js/nav-dropdown.js')}}"></script>  
-<script src="{{asset('assets-t/dropdown/js/navbar-dropdown.js')}}"></script>  
-<script src="{{asset('assets-t/touchswipe/jquery.touch-swipe.min.js')}}"></script>  
-<script src="{{asset('assets-t/theme/js/script.js')}}"></script>  
-<script src="{{asset('assets-t/formoid/formoid.min.js')}}"></script>  
-  
-  
+<script src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.5"></script>
+<script src="https://apis.google.com/js/plusone.js"></script>
+<script src="{{asset('assets-t/facebook-plugin/facebook-script.js')}}"></script>
+<script src="{{asset('assets-t/smoothscroll/smooth-scroll.js')}}"></script>
+<script src="{{asset('assets-t/formstyler/jquery.formstyler.js')}}"></script>
+<script src="{{asset('assets-t/formstyler/jquery.formstyler.min.js')}}"></script>
+<script src="{{asset('assets-t/datepicker/jquery.datetimepicker.full.js')}}"></script>
+<script src="{{asset('assets-t/viewportchecker/jquery.viewportchecker.js')}}"></script>
+<script src="{{asset('assets-t/dropdown/js/nav-dropdown.js')}}"></script>
+<script src="{{asset('assets-t/dropdown/js/navbar-dropdown.js')}}"></script>
+<script src="{{asset('assets-t/touchswipe/jquery.touch-swipe.min.js')}}"></script>
+<script src="{{asset('assets-t/theme/js/script.js')}}"></script>
+<script src="{{asset('assets-t/formoid/formoid.min.js')}}"></script>
+
+
  <div id="scrollToTop" class="scrollToTop mbr-arrow-up"><a style="text-align: center;"><i class="mbr-arrow-up-icon mbr-arrow-up-icon-cm cm-icon cm-icon-smallarrow-up"></i></a></div>
     <input name="animation" type="hidden">
   </body>

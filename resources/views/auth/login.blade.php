@@ -8,8 +8,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
   <link rel="shortcut icon" href="{{asset('assets/images/logo.png')}}" type="image/x-icon">
   <meta name="description" content="">
-  
-  
+
+
   <title>Login</title>
   <link rel="stylesheet" href="{{asset('assets/tether/tether.min.css')}}">
   <link rel="stylesheet" href="{{asset('assets/bootstrap/css/bootstrap.min.css')}}">
@@ -24,20 +24,20 @@
   <link rel="stylesheet" href="{{asset('assets/socicon/css/styles.css')}}">
   <link rel="stylesheet" href="{{asset('assets/theme/css/style.css')}}">
   <link rel="preload" as="style" href="{{asset('assets/mobirise/css/mbr-additional.css')}}"><link rel="stylesheet" href="{{asset('assets/mobirise/css/mbr-additional.css')}}" type="text/css">
-  
-  
-  
-  
+
+
+
+
 </head>
 <body>
-  
+
   <section class="menu menu1 cid-sfXkj8RjUf" once="menu" id="menu1-o">
-    
+
 
     <nav class="navbar navbar-dropdown navbar-fixed-top navbar-expand-lg">
         <div class="container-fluid">
             <div class="navbar-brand">
-                
+
                 <span class="navbar-caption-wrap"><a class="navbar-caption text-black text-primary display-7" href="/">MESES</a></span>
             </div>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -49,11 +49,16 @@
                 </div>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav nav-dropdown nav-right" data-app-modern-menu="true"><li class="nav-item"><a class="nav-link link text-black text-primary display-4" href="/kelas">
+                <ul class="navbar-nav nav-dropdown nav-right" data-app-modern-menu="true">
+                    <li class="nav-item"><a class="nav-link link text-black text-primary display-4" href="/kelas">
                             Kelas</a></li>
                     <li class="nav-item"><a class="nav-link link text-black text-primary display-4" href="/videos">
                             Video</a></li>
-                    <li class="nav-item"><a class="nav-link link text-black text-primary display-4" href="/soals">Soal</a>
+                    <li class="nav-item"><a class="nav-link link text-black text-primary display-4" href="/soals">
+                        Soal</a>
+                    </li>
+                    <li class="nav-item"><a class="nav-link link text-black text-primary display-4" href="/aboutus">
+                        Tentang Kami</a>
                     </li>
                 </ul>
                 @if(!Auth::guest())
@@ -66,10 +71,10 @@
 
                          <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                              @csrf
-                         </form>    
+                         </form>
                     </div>
                 @endif
-                
+
             </div>
         </div>
     </nav>
@@ -136,25 +141,25 @@
 <a href="https://mobirise.site/o" style="flex: 1 1; height: 3rem; padding-left: 1rem;"></a>
 <p style="flex: 0 0 auto; margin:0; padding-right:1rem;display:none">Designed with Mobirise - <a href="https://mobirise.site/m" style="color:#aaa;">See it</a></p>
 </section>
-<script src="{{asset('assets/web/assets/jquery/jquery.min.js')}}"></script> 
+<script src="{{asset('assets/web/assets/jquery/jquery.min.js')}}"></script>
 <script src="{{asset('assets/popper/popper.min.js')}}"></script>
 <script src="{{asset('assets/tether/tether.min.js')}}"></script>
-<script src="{{asset('assets/bootstrap/js/bootstrap.min.js')}}"></script>  
+<script src="{{asset('assets/bootstrap/js/bootstrap.min.js')}}"></script>
 <script src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.5"></script>
-<script src="https://apis.google.com/js/plusone.js"></script>  
-<script src="{{asset('assets/facebook-plugin/facebook-script.js')}}"></script>  
-<script src="{{asset('assets/smoothscroll/smooth-scroll.js')}}"></script>  
+<script src="https://apis.google.com/js/plusone.js"></script>
+<script src="{{asset('assets/facebook-plugin/facebook-script.js')}}"></script>
+<script src="{{asset('assets/smoothscroll/smooth-scroll.js')}}"></script>
 <script src="{{asset('assets/dropdown/js/nav-dropdown.js')}}"></script>
 <script src="{{asset('assets/dropdown/js/navbar-dropdown.js')}}"></script>
 <script src="{{asset('assets/touchswipe/jquery.touch-swipe.min.js')}}"></script>
 <script src="{{asset('assets/viewportchecker/jquery.viewportchecker.js')}}"></script>
-<script src="{{asset('assets/formstyler/jquery.formstyler.js')}}"></script>  
-<script src="{{asset('assets/formstyler/jquery.formstyler.min.js')}}"></script>  
-<script src="{{asset('assets/datepicker/jquery.datetimepicker.full.js')}}"></script>  
-<script src="{{asset('assets/theme/js/script.js')}}"></script>  
-<script src="{{asset('assets/formoid/formoid.min.js')}}"></script>  
-  
-  
+<script src="{{asset('assets/formstyler/jquery.formstyler.js')}}"></script>
+<script src="{{asset('assets/formstyler/jquery.formstyler.min.js')}}"></script>
+<script src="{{asset('assets/datepicker/jquery.datetimepicker.full.js')}}"></script>
+<script src="{{asset('assets/theme/js/script.js')}}"></script>
+<script src="{{asset('assets/formoid/formoid.min.js')}}"></script>
+
+
  <div id="scrollToTop" class="scrollToTop mbr-arrow-up"><a style="text-align: center;"><i class="mbr-arrow-up-icon mbr-arrow-up-icon-cm cm-icon cm-icon-smallarrow-up"></i></a></div>
     <input name="animation" type="hidden">
   </body>

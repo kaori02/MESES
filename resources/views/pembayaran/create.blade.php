@@ -59,7 +59,7 @@
     <link rel="preload" as="style" href="{{asset('assets/mobirise/css/mbr-additional.css')}}">
     @endif
 
-    
+
 </head>
 
 <body>
@@ -94,6 +94,9 @@
                         <li class="nav-item"><a class="nav-link link text-black text-primary display-4"
                                 href="/soals">Soal</a>
                         </li>
+                        <li class="nav-item"><a class="nav-link link text-black text-primary display-4" href="/aboutus">
+                            Tentang Kami</a>
+                        </li>
                     </ul>
                     @if(!Auth::guest())
                     <div class="navbar-buttons mbr-section-btn">
@@ -105,7 +108,7 @@
 
                          <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                              @csrf
-                         </form>    
+                         </form>
                     </div>
                     @endif
 
@@ -250,7 +253,7 @@
                             <div class="col-lg-12 col-md-12 col-sm-12 align-center mbr-section-btn">
                             {{Form::submit('Tambahkan Pembayaran', ['class'=>'btn btn-primary display-4'])}}
                             </div>
-                        {!! Form::close() !!}    
+                        {!! Form::close() !!}
                 </div>
             </div>
         </div>

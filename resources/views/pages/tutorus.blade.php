@@ -64,6 +64,9 @@
                             Video</a></li>
                     <li class="nav-item"><a class="nav-link link text-black text-primary display-4" href="/soals">Soal</a>
                     </li>
+                    <li class="nav-item"><a class="nav-link link text-black text-primary display-4" href="/aboutus">
+                        Tentang Kami</a>
+                    </li>
                 </ul>
                 @if(!Auth::guest())
                 <div class="navbar-buttons mbr-section-btn">
@@ -75,7 +78,7 @@
 
                      <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                          @csrf
-                     </form>    
+                     </form>
                 </div>
                 @endif
 
@@ -95,9 +98,9 @@
             </div>
              <div class="mbr-section-head">
                 <h5 class="mbr-section-title mbr-fonts-style align-left mb-0 display-7">
-                    Berikut ini merupakan beberapa rekening resmi untuk melakukan pembayaran MESES untuk account Anda, diantaranya sebagai berikut Berikut merupakan tutor - tutor 
+                    Berikut ini merupakan beberapa rekening resmi untuk melakukan pembayaran MESES untuk account Anda, diantaranya sebagai berikut Berikut merupakan tutor - tutor
                     yang telah membuat dan memelihara konten - konten yang ada pada website kami:</h5>
-                
+
                 @if(count($tutorus) > 0)
                     @foreach ($tutorus as $tutor)
                     <div class="card" style="padding: 5%">
@@ -215,7 +218,7 @@
                 </div>
             </div>
         </div>
-    </section>           
+    </section>
 <section style="display:none"  style="background-color: #fff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif; color:#aaa; font-size:12px; padding: 0; align-items: center; display: flex;"><a href="https://mobirise.site/t" style="flex: 1 1; height: 3rem; padding-left: 1rem;"></a><p style="flex: 0 0 auto; margin:0; padding-right:1rem;">Build your own site - <a href="https://mobirise.site/v" style="color:#aaa;">Get now</a></p></section>
 <script src="{{asset('assets/web/assets/jquery/jquery.min.js')}}"></script>
 <script src="{{asset('assets/popper/popper.min.js')}}"></script>

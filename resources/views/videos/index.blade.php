@@ -72,6 +72,9 @@
                         <li class="nav-item"><a class="nav-link link text-black text-primary display-4"
                                 href="/soals">Soal</a>
                         </li>
+                        <li class="nav-item"><a class="nav-link link text-black text-primary display-4" href="/aboutus">
+                            Tentang Kami</a>
+                        </li>
                     </ul>
                     @if(!Auth::guest())
                     <div class="navbar-buttons mbr-section-btn">
@@ -83,7 +86,7 @@
 
                          <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                              @csrf
-                         </form>    
+                         </form>
                     </div>
                     @endif
 
@@ -120,7 +123,7 @@
                                         var sites = {!! json_encode($video->link(), JSON_HEX_TAG) !!};
                                         var iframe_src = $(sites).attr('src');
                                         var youtube_video_id = iframe_src.match(/youtube\.com.*(\?v=|\/embed\/)(.{11})/).pop();
-                                    
+
                                         if (youtube_video_id.length == 11) {
                                           var video_thumbnail2 = '<img src="//img.youtube.com/vi/' + youtube_video_id + '/0.jpg">';
                                           document.write(video_thumbnail2);

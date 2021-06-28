@@ -23,6 +23,7 @@ Route::get('/', 'HomeController@index');
 Route::get('/home', 'HomeController@home');
 Route::get('/tutor', 'HomeController@tutor');
 Route::get('/tutorus', 'HomeController@tutorus');
+Route::get('/aboutus', 'HomeController@aboutus');
 
 Route::get('/tutor/soals', 'SoalController@tutor');
 Route::get('/tutor/kelas', 'KelasController@tutor');

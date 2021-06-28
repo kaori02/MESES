@@ -6,24 +6,13 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="generator" content="Mobirise v5.2.0, mobirise.com">
   <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
-  <link rel="shortcut icon" href="{{asset('assets/images/logo.png')}}" type="image/x-icon">
+  <link rel="shortcut icon" href="assets/images/logo.png" type="image/x-icon">
   <meta name="description" content="">
 
 
-  <title>Soal</title>
-  @if(!Auth::guest() && Auth::user()->isKamiSama())
-  <link rel="stylesheet" href="{{asset('assets-t/tether/tether.min.css')}}">
-  <link rel="stylesheet" href="{{asset('assets-t/bootstrap/css/bootstrap.min.css')}}">
-  <link rel="stylesheet" href="{{asset('assets-t/bootstrap/css/bootstrap-grid.min.css')}}">
-  <link rel="stylesheet" href="{{asset('assets-t/bootstrap/css/bootstrap-reboot.min.css')}}">
-  <link rel="stylesheet" href="{{asset('assets-t/facebook-plugin/style.css')}}">
-  <link rel="stylesheet" href="{{asset('assets-t/dropdown/css/style.css')}}">
-  <link rel="stylesheet" href="{{asset('assets-t/animatecss/animate.css')}}">
-  <link rel="stylesheet" href="{{asset('assets-t/socicon/css/styles.css')}}">
-  <link rel="stylesheet" href="{{asset('assets-t/theme/css/style.css')}}">
-  <link rel="stylesheet" href="{{asset('assets-t/mobirise/css/mbr-additional.css')}}" type="text/css">
-  <link rel="preload" as="style" href="{{asset('assets-t/mobirise/css/mbr-additional.css')}}">
-  @else
+  <title>about</title>
+  <link rel="stylesheet" href="{{asset('assets/web/assets/mobirise-icons2/mobirise2.css')}}">
+  <link rel="stylesheet" href="{{asset('assets/web/assets/mobirise-icons/mobirise-icons.css')}}">
   <link rel="stylesheet" href="{{asset('assets/tether/tether.min.css')}}">
   <link rel="stylesheet" href="{{asset('assets/bootstrap/css/bootstrap.min.css')}}">
   <link rel="stylesheet" href="{{asset('assets/bootstrap/css/bootstrap-grid.min.css')}}">
@@ -33,19 +22,21 @@
   <link rel="stylesheet" href="{{asset('assets/animatecss/animate.css')}}">
   <link rel="stylesheet" href="{{asset('assets/socicon/css/styles.css')}}">
   <link rel="stylesheet" href="{{asset('assets/theme/css/style.css')}}">
-  <link rel="stylesheet" href="{{asset('assets/mobirise/css/mbr-additional.css')}}" type="text/css">
-  <link rel="preload" as="style" href="{{asset('assets/mobirise/css/mbr-additional.css')}}">
-  @endif
+  <link rel="preload" as="style" href="{{asset('assets/mobirise/css/mbr-additional.css')}}"><link rel="stylesheet" href="{{asset('assets/mobirise/css/mbr-additional.css')}}" type="text/css">
+
+
+
+
 </head>
 <body>
 
-    @if(!Auth::guest() && Auth::user()->isKamiSama())
-    @include('pages.navbartutor')
-    @else
-  <section class="menu menu1 cid-sfXxzEKelL" once="menu" id="menu1-1n">
+  <section class="menu menu1 cid-sBEbZQgv6U" once="menu" id="menu1-28">
+
+
     <nav class="navbar navbar-dropdown navbar-fixed-top navbar-expand-lg">
         <div class="container-fluid">
             <div class="navbar-brand">
+
                 <span class="navbar-caption-wrap"><a class="navbar-caption text-black text-primary display-7" href="/">MESES</a></span>
             </div>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -68,89 +59,119 @@
                     </li>
                 </ul>
                 @if(!Auth::guest())
-                <div class="navbar-buttons mbr-section-btn">
-                    <a class="btn btn-primary display-4" href="{{ route('logout') }}"
-                        onclick="event.preventDefault();
-                                      document.getElementById('logout-form').submit();">
-                         {{ __('Keluar') }}
-                     </a>
+                    <div class="navbar-buttons mbr-section-btn">
+                        <a class="btn btn-primary display-4" href="{{ route('logout') }}"
+                            onclick="event.preventDefault();
+                                          document.getElementById('logout-form').submit();">
+                             {{ __('Keluar') }}
+                         </a>
 
-                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                         @csrf
-                     </form>
-                </div>
-                @endif
+                         <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                             @csrf
+                         </form>
+                    </div>
+                    @endif
 
 
             </div>
         </div>
     </nav>
 </section>
-@endif
 
-<section class="features10 cid-sfXxzF8sY5" id="features11-1o">
-    <div class="container">
-        <div class="title">
-            <h3 class="mbr-section-title mbr-fonts-style mb-4 display-2"><strong>Soal {{$kategoris->nama_kategori}}</strong></h3>
-            @include('pages.msg')
+<section class="cid-sBEbZQWbhS mbr-parallax-background" id="header2-29">
 
-        </div>
-        @foreach ($soals as $soal)
-        <div class="card">
-            <div class="card-wrapper">
-                <div class="row align-items-center">
-                    <div class="col-12 col-md-2">
-                        <div class="image-wrapper">
-                            <img src="/storage/soal_images/{{$soal->cover_image}}" alt="Mobirise" title="">
-                        </div>
-                    </div>
-                    <div class="col-12 col-md">
-                        <div class="card-box">
-                            <div class="row">
-                                <div class="col-12">
-                                    @if(!Auth::guest() && Auth::user()->isKamiSama())
-                                    <div class="top-line">
-                                        <a href="/soals/{{$soal->id_soal}}/edit" class="cost mbr-fonts-style display-5">...</a>
-                                    </div>
-                                    @endif
-                                </div>
-                                <div class="col-12">
-                                    <div class="bottom-line">
-                                        <p class="mbr-text mbr-fonts-style m-0 display-7">{{$soal->body_soal}}
-                                            <br>A. {{$soal->a}}
-                                            <br>B. {{$soal->b}}
-                                            <br>C. {{$soal->c}}
-                                            <br>D. {{$soal->d}}
-                                            @if($soal->isShowAns())
-                                            <br><strong>Jawaban : {{$soal->jawaban}}</strong>
-                                            @endif
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+
+
+    <div class="mbr-overlay" style="opacity: 0.4; background-color: rgb(35, 35, 35);"></div>
+
+    <div class="container align-center">
+        <div class="row justify-content-md-center">
+            <div class="mbr-white col-md-10">
+                <h1 class="mbr-section-title mbr-bold pb-3 mbr-fonts-style display-1">
+                    Medical Courses</h1>
+
+
+
             </div>
         </div>
-        @endforeach
-        {{$soals->links()}}
-        <div class="col-lg-12 col-md-12 col-sm-12 align-center mbr-section-btn">
+    </div>
 
-            @if(!$soal->isShowAns())
-            <a href="/soals/showanswer/{{$kategoris->id_kategori}}" class="btn btn-info display-4 float-right">
-                Lihat Jawaban
-            </a>
-            @else
-            <a href="/soals/hideanswer/{{$kategoris->id_kategori}}" class="btn btn-info display-4 float-right">
-                Sembunyikan Jawaban
-            </a>
-            @endif
+</section>
+
+<section class="features18 cid-sBEcbbLXQF" id="features19-2i">
+
+
+
+
+    <div>
+        <div class="row justify-content-center">
+            <div class="card col-12 col-lg offset-lg-1">
+                <div class="card-wrapper">
+                    <h6 class="card-title mbr-fonts-style mb-4 display-2"><strong>Kenalan sama MESES yuk</strong></h6>
+                    <p class="mbr-text mbr-fonts-style display-7">Dengan kemajuan teknologi informasi yang kian pesat belakangan ini, terutama dalam revolusi industri 4.0 yang sedang berjalan, sudah menjadi hal yang lumrah bahwa semua orang dapat memiliki hak yang sama dalam mendapatkan kemudahan dalam melakukan berbagai macam hal.
+<br>
+<br>Kursus online merupakan salah satu hal yang menjadi populer pada era revolusi industri ini. Karena dengan adanya kursus online, kemudahan dalam belajar tentu akan dapat dirasakan. Kemudahan mendapatkan materi pelajaran, akses yang mudah kapanpun dan dimanapun, serta kemudahan dalam melakukan konsultasi dengan tenaga didik ahli menjadi keunggulan utama yang membuat kursus online menjadi salah satu fasilitas yang cukup banyak digunakan oleh para mahasiswa saat ini, tidak terkecuali mahasiswa kedokteran.
+<br>
+<br>
+<br>Berdasarkan hasil observasi di lapangan, kami menemukan bahwa sumber daya belajar bagi mahasiswa kedokteran bukanlah menjadi hal yang mudah untuk dijangkau. Bahkan, dalam beberapa kasus sangat sulit untuk diperoleh. Untuk mengatasi permasalahan diatas, kami hadirkan aplikasi “MESES(MEdical courSES)”. Dengan hadirnya aplikasi ini, para mahasiswa akan lebih mudah dalam proses belajar dengan sumber daya yang memadai serta didukung dengan adanya tutor ahli yang mampu mengayomi proses belajar – mengajar para mahasiswa dengan efektif, efisien, serta menyenangkan.&nbsp;</p>
+
+                </div>
+            </div>
+            <div class="col-12 col-lg-5">
+                <div class="image-wrapper">
+                    <img src="assets/images/mbr-1076x717.jpg" alt="Mobirise">
+                </div>
+            </div>
         </div>
     </div>
 </section>
 
-<section class="footer3 cid-sfXBI85u46 mbr-reveal" once="footers" id="footer3-1s">
+<section class="contacts3 map1 cid-sBEcdYBRkQ" id="contacts3-2j">
+
+
+
+    <div class="container">
+        <div class="mbr-section-head">
+            <h3 class="mbr-section-title mbr-fonts-style align-center mb-0 display-2">
+                <strong>Contacts</strong>
+            </h3>
+
+        </div>
+        <div class="row justify-content-center mt-4">
+            <div class="card col-12 col-md-6">
+                <div class="card-wrapper">
+                    <div class="image-wrapper">
+                        <span class="mbr-iconfont mobi-mbri-globe mobi-mbri"></span>
+                    </div>
+                    <div class="text-wrapper">
+                        <h6 class="card-title mbr-fonts-style mb-1 display-5">
+                            <strong>Phone</strong>
+                        </h6>
+                        <p class="mbr-text mbr-fonts-style display-7">+628123456789</p>
+                    </div>
+                </div>
+                <div class="card-wrapper">
+                    <div class="image-wrapper">
+                        <span class="mbr-iconfont mobi-mbri-globe mobi-mbri"></span>
+                    </div>
+                    <div class="text-wrapper">
+                        <h6 class="card-title mbr-fonts-style mb-1 display-5">
+                            <strong>Email</strong>
+                        </h6>
+                        <p class="mbr-text mbr-fonts-style display-7">
+                            <a href="mailto:info@site.com" class="text-primary">admin@meses.com</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="map-wrapper col-12 col-md-6">
+                <div class="google-map"><iframe frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCZI5F_k6S1k46ujh0SNrapM89f7mJxd30&amp;q=institut teknologi sepuluh nopember" allowfullscreen=""></iframe></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="footer3 cid-sBEbZXHjdx" once="footers" id="footer3-2h">
 
 
 
@@ -209,19 +230,23 @@
         </div>
     </div>
 </section>
-<section style="display:none"  style="background-color: #fff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif; color:#aaa; font-size:12px; padding: 0; align-items: center; display: flex;"><a href="https://mobirise.site/t" style="flex: 1 1; height: 3rem; padding-left: 1rem;"></a><p style="flex: 0 0 auto; margin:0; padding-right:1rem;">Build your own site - <a href="https://mobirise.site/v" style="color:#aaa;">Get now</a></p></section>
+<section style="display:none" style="background-color: #fff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif; color:#aaa; font-size:12px; padding: 0; align-items: center; display: flex;">
+    <a href="https://mobirise.site/o" style="flex: 1 1; height: 3rem; padding-left: 1rem;"></a>
+    <p style="flex: 0 0 auto; margin:0; padding-right:1rem;">Made with <a href="https://mobirise.site/a" style="color:#aaa;">Mobirise</a></p>
+</section>
 <script src="{{asset('assets/web/assets/jquery/jquery.min.js')}}"></script>
 <script src="{{asset('assets/popper/popper.min.js')}}"></script>
 <script src="{{asset('assets/tether/tether.min.js')}}"></script>
 <script src="{{asset('assets/bootstrap/js/bootstrap.min.js')}}"></script>
 <script src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.5"></script>
-<script src="https://apis.google.com/js/plusone.js"></script>
-<script src="{{asset('assets/facebook-plugin/facebook-script.js')}}""></script>
+<script src="{{asset('https://apis.google.com/js/plusone.js')}}"></script>
+<script src="{{asset('assets/facebook-plugin/facebook-script.js')}}"></script>
 <script src="{{asset('assets/smoothscroll/smooth-scroll.js')}}"></script>
 <script src="{{asset('assets/dropdown/js/nav-dropdown.js')}}"></script>
 <script src="{{asset('assets/dropdown/js/navbar-dropdown.js')}}"></script>
 <script src="{{asset('assets/touchswipe/jquery.touch-swipe.min.js')}}"></script>
 <script src="{{asset('assets/viewportchecker/jquery.viewportchecker.js')}}"></script>
+<script src="{{asset('assets/parallax/jarallax.min.js')}}"></script>
 <script src="{{asset('assets/theme/js/script.js')}}"></script>
 
 

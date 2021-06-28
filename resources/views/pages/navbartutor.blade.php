@@ -45,6 +45,9 @@
                                 class="text-black text-primary dropdown-item display-4" href="/soals/create"
                                 aria-expanded="false">Tambah Soal</a></div>
                     </li>
+                    <li class="nav-item"><a class="nav-link link text-black text-primary display-4" href="/aboutus">
+                        Tentang Kami</a>
+                    </li>
                 </ul>
                 @if(!Auth::guest())
                 <div class="navbar-buttons mbr-section-btn">
@@ -56,7 +59,7 @@
 
                      <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                          @csrf
-                     </form>    
+                     </form>
                 </div>
                 @endif
 

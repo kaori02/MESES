@@ -69,4 +69,5 @@ class HomeController extends Controller
         // , compact('artikels','ambulan', 'posko', 'relawan')
         );
     }
+    public function aboutus(){return view('pages.aboutus');}
 }
